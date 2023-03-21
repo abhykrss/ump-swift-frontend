@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:4000",
+  "proxy": "https://ump-swift-backend-production-c0d4.up.railway.app",
   "dependencies": {
     "@react-pdf/renderer": "^3.1.8",
     "@reduxjs/toolkit": "^1.9.3",
