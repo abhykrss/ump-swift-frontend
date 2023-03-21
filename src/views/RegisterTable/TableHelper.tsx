@@ -63,7 +63,6 @@ const changePhotoId = (userId: string, change: boolean) => {
     .put('https://ump-swift-backend-production-c0d4.up.railway.app/photoIdChange', payload)
     .then(res => {
       successToast(res.data);
-      navigate('/home/register');
     })
     .catch(err => {
       errorToast(err.data);
@@ -76,7 +75,6 @@ const updateAttendance = (userId: string, training_id: string, attendance: strin
     .put('https://ump-swift-backend-production-c0d4.up.railway.app/updateAttendance', payload)
     .then(res => {
       successToast(res.data);
-      navigate('/home/register');
     })
     .catch(err => {
       errorToast(err.data);
