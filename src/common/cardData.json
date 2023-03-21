@@ -1,0 +1,20 @@
+[
+  {
+    "companyName": "Swift Training",
+    "description": "Swift Training Manangement System",
+    "ribbonData": "New",
+    "img": "https://w7.pngwing.com/pngs/953/339/png-transparent-society-for-worldwide-interbank-financial-telecommunication-computer-icons-bank-text-payment-logo-thumbnail.png"
+  },
+  {
+    "companyName": "Oregen",
+    "description": "Oregen Training Management System",
+    "ribbonData": "Coming Soon",
+    "img": ""
+  },
+  {
+    "companyName": "EMLB",
+    "description": "EMLB Training Management System",
+    "ribbonData": "Coming Soon",
+    "img": "EMLB"
+  }
+]
