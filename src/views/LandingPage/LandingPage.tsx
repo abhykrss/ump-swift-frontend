@@ -9,7 +9,7 @@ export const LandingPage: React.FC = () => {
       <Header />
       <Row gutter={16} style={{ margin: 40 }}>
         <Col className="gutter-row" span={6}>
-          <Link to="register">
+          <Link to="/register">
             <Space direction="vertical" size="middle" style={{ width: '100%' }}>
               <Badge.Ribbon text="NEW" color="red">
                 <Card
