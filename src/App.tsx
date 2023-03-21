@@ -1,4 +1,4 @@
-import { react } from '@babel/types';
+import {React} from 'react'
 import './App.css';
 import AppRoutes from './routes/AppRoutes';
 import { Header } from './views/Header/Header';
