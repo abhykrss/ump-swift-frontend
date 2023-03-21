@@ -87,7 +87,7 @@ export const Register = () => {
                   </div>
                 </div>
                 <div className="flex items-end ">
-                  <Link to="exportPdf" target="_blank">
+                  <Link to="/home/register/exportPdf" target="_blank">
                     <Button>Export To PDF</Button>
                   </Link>
                 </div>
