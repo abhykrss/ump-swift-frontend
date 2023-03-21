@@ -6,8 +6,11 @@ import { getUsersData } from '../../store/slices/usersDataSlice';
 import { Header } from '../Header/Header';
 import { col, dataSource } from './TableHelper';
 import { getTrainingData } from '../../store/slices/trainingDataSlice';
+import { Link, useNavigate } from 'react-router-dom';
 
 export const Register = () => {
+  // Using navigation
+  const navigate = useNavigate();
   // Dispatch Actionn to get Users Data
   const dispatch = useAppDispatch();
   useEffect(() => {
@@ -22,11 +25,7 @@ export const Register = () => {
   return (
     <>
       <Header />
-      {!userData.data && !trainingData.data ? (
-        <div className="mx-auto spinner">
-          <Spin size="large" />
-        </div>
-      ) : (
+      {userData.data && trainingData.data ? (
         <div className="container mx-auto px-4 sm:px-8">
           <Row className="row height" align="middle" justify="center">
             <Col span={24}>
@@ -88,7 +87,9 @@ export const Register = () => {
                   </div>
                 </div>
                 <div className="flex items-end ">
-                  <Button>Export To PDF</Button>
+                  <Link to="exportPdf" target="_blank">
+                    <Button>Export To PDF</Button>
+                  </Link>
                 </div>
               </div>
             </Col>
@@ -118,7 +119,7 @@ export const Register = () => {
                     Total Learners
                     <span className="px-2 absolute left-[85%]">:</span>
                   </h5>
-                  <Input type="number" readOnly={true} placeholder="Total Learners" value={10} className="px-2" />
+                  <Input type="number" readOnly={true} placeholder="Total Learners" value={9} className="px-2" />
                 </div>
                 <div className="flex items-center">
                   <h5 className="px-2 w-40 relative whitespace-pre">
@@ -137,6 +138,10 @@ export const Register = () => {
               </div>
             </Col>
           </Row>
+        </div>
+      ) : (
+        <div className="mx-auto spinner">
+          <Spin size="large" />
         </div>
       )}
     </>

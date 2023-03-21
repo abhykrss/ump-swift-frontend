@@ -6,5 +6,6 @@ const AdminLogo = require('./AdminLogo.jpg') as string;
 const googleicon = require('./googleIcon.png') as string;
 const Fbicon = require('./Fblogo.png') as string;
 const bg = require('./Bg.png') as string;
+const swiftLogo = require('./swiftLogo.png');
 
-export { logo, refreshIcon, meetriLogo, AdminLogo, googleicon, Fbicon, bg };
+export { logo, refreshIcon, meetriLogo, AdminLogo, googleicon, Fbicon, bg, swiftLogo };
