@@ -3,7 +3,7 @@ import axios from 'axios';
 import { errorToast, successToast } from '../../common/Toast/toast';
 import { UploadOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
-const navigate = useNavigate();
+// const navigate = useNavigate();
 export const col = [
   {
     dataIndex: 'learner_completion',
@@ -60,7 +60,7 @@ const changePhotoId = (userId: string, change: boolean) => {
   console.log(change);
   const payload = { id: userId, change: change };
   axios
-    .put('https://ump-swift-backend-production-c0d4.up.railway.app/photoIdChange', payload)
+    .put('/photoIdChange', payload)
     .then(res => {
       successToast(res.data);
     })
@@ -72,7 +72,7 @@ const updateAttendance = (userId: string, training_id: string, attendance: strin
   console.log(attendance);
   const payload = { id: userId, training_id: training_id, attendance: attendance };
   axios
-    .put('https://ump-swift-backend-production-c0d4.up.railway.app/updateAttendance', payload)
+    .put('/updateAttendance', payload)
     .then(res => {
       successToast(res.data);
     })

@@ -13,8 +13,8 @@ const AppRoutes: React.FC = () => {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/home" element={<LandingPage />} />
-        <Route path="/home/register" element={<Register />} />
-        <Route path="/home/register/exportPdf" element={<SaveToPdf />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/exportPdf" element={<SaveToPdf />} />
       </Routes>
     </>
   );
