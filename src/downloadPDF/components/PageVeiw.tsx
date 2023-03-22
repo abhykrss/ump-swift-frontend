@@ -37,9 +37,9 @@ const styles = StyleSheet.create({
 const PageVeiw = () => (
   <Document>
     <Page size="A4" style={styles.page} orientation={'landscape'} wrap>
-      <View fixed>
+      {/* <View fixed>
         <Image style={styles.image} src={swiftLogo} />
-      </View>
+      </View> */}
       <View style={styles.logo}>
         <Image style={styles.image} src={swiftLogo} />
         <View style={styles.pageTile}>
