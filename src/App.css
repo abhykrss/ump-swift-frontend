@@ -15,6 +15,15 @@
   --primary-font-weight: 400;
 }
 
+button, [type='button'], [type='reset'], [type='submit']{
+  background-color: #004b7c;
+  border:none !important;
+}
+
+button.ant-btn-primary:hover {
+  background: rgba(9, 109, 217, 0.51) !important;
+}
+
 .ant-table-thead > tr > th {
   font-weight: 400;
   font-family: var(--font-family);
@@ -167,6 +176,7 @@ input[type='number'] {
   width: 100%;
   font-family: var(--font-family);
   font-weight: var(--primary-font-weight);
+  padding-left: 0 !important;
 }
 
 .spinner {
@@ -184,4 +194,8 @@ input[type='number'] {
 
 .ant-spin-dot {
   font-size: 40px !important;
+}
+
+.register-title{
+  font-family: var(--font-family);
 }
