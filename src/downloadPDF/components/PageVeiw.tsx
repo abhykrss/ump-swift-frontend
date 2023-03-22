@@ -20,17 +20,18 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
   },
   logo: {
-    width: '100%',
+    width: 'auto',
     height: 'auto',
     flexDirection: 'row',
     justifyContent: 'space-evenly',
+    alignItems: 'center',
   },
   image: {
-    width: '30%',
-    height: 'auto',
+    width: '40%',
+    height: '50%',
   },
   pageTile: {
-    width: '70%',
+    width: '100%',
   },
 });
 

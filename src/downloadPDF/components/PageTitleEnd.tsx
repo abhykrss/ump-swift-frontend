@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginTop: 24,
     width: 'auto',
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-around',
     alignItems: 'center',
   },
   reportTitle: {

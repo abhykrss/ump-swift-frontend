@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     marginTop: 24,
     marginBottom: 0,
     width: 'auto',
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-around',
   },
   reportTitle: {
     color: 'black',
