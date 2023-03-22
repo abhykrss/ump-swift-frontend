@@ -1,12 +1,11 @@
 import axios from 'axios';
 import { errorToast } from '../../common/Toast/toast';
+import { config } from '../../App';
+
 export const trainingDataApi = async () => {
   return await axios({
-    url: '/trainingInfo',
+    url: config.endpoint + '/trainingInfo',
     method: 'get',
-    headers: {
-      'Access-Control-Allow-Origin': 'https://main--stellular-maamoul-1bdee3.netlify.app/',
-    },
   })
     .then(response => response.data) // ADD toast
     .catch(e => {

@@ -3,6 +3,7 @@ import axios from 'axios';
 import { errorToast, successToast } from '../../common/Toast/toast';
 import { UploadOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
+import { config } from '../../App';
 // const navigate = useNavigate();
 export const col = [
   {
@@ -60,7 +61,7 @@ const changePhotoId = (userId: string, change: boolean) => {
   console.log(change);
   const payload = { id: userId, change: change };
   axios
-    .put('/photoIdChange', payload)
+    .put(config.endpoint + '/photoIdChange', payload)
     .then(res => {
       successToast(res.data);
     })
@@ -72,7 +73,7 @@ const updateAttendance = (userId: string, training_id: string, attendance: strin
   console.log(attendance);
   const payload = { id: userId, training_id: training_id, attendance: attendance };
   axios
-    .put('/updateAttendance', payload)
+    .put(config.endpoint + '/updateAttendance', payload)
     .then(res => {
       successToast(res.data);
     })

@@ -1,13 +1,11 @@
 import axios from 'axios';
 import { errorToast } from '../../common/Toast/toast';
+import { config } from '../../App';
 
 export const usersDataApi = async () => {
   return await axios({
-    url: '/users',
+    url: config.endpoint + '/users',
     method: 'get',
-    headers: {
-      'Access-Control-Allow-Origin': 'https://main--stellular-maamoul-1bdee3.netlify.app/',
-    },
   })
     .then(response => response.data)
     .catch(e => {
