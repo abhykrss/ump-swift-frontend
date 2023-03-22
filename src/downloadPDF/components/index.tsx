@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/constants';
 import usersDataSlice, { getUsersData } from '../../store/slices/usersDataSlice';
 import { getTrainingData } from '../../store/slices/trainingDataSlice';
+import { Spin } from 'antd';
 
 export const SaveToPdf = () => {
   const dispatch = useAppDispatch();
@@ -26,7 +27,9 @@ export const SaveToPdf = () => {
         </div>
       ) : (
         <>
-          <div>Loading...</div>
+          <div className="mx-auto spinner">
+            <Spin size="large" />
+          </div>
         </>
       )}
     </Provider>
