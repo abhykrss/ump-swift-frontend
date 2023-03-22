@@ -36,7 +36,7 @@ export const Register = () => {
                       Venue
                       <span className="px-2 absolute left-[85%]">:</span>
                     </h5>
-                    <Input type="text" readOnly={true} placeholder="Venue" className="px-2" />
+                    <Input type="text" readOnly={true} value={trainingData.data !== null && trainingData.data[0]?.venue} className="px-2" />
                   </div>
 
                   <div className="flex items-center">
@@ -60,7 +60,7 @@ export const Register = () => {
                       Trainer Name
                       <span className="px-2 absolute left-[85%]">:</span>
                     </h5>
-                    <Input type="text" readOnly={true} placeholder="Trainer Name" className="px-2" />
+                    <Input type="text" readOnly={true} value={trainingData.data !== null && trainingData.data[0]?.user_name} className="px-2" />
                   </div>
                   <div className="flex items-center">
                     <h5 className="px-2 w-40 relative whitespace-pre">
@@ -95,31 +95,15 @@ export const Register = () => {
             </Col>
 
             <Col span={24}>
-              <Table
-                id="usersTable"
-                columns={col}
-                dataSource={dataSource(userData)}
-                bordered={true}
-                rowKey={(record: any) => record.id}
-                pagination={{
-                  pageSizeOptions: [10, 20, 50, 100],
-                  responsive: true,
-                  showSizeChanger: true,
-                  onChange: () => {
-                    window.scrollTo({
-                      top: 0,
-                      behavior: 'smooth',
-                    });
-                  },
-                }}
-              />
+              {/* Table JSX */}
+              <Table columns={col} dataSource={dataSource(userData)} bordered={true} rowKey={(record: any) => record.id} />
               <div className="grid grid-cols-3 py-3 gap-3">
                 <div className="flex items-center">
                   <h5 className="px-2 w-40 relative">
                     Total Learners
                     <span className="px-2 absolute left-[85%]">:</span>
                   </h5>
-                  <Input type="number" readOnly={true} placeholder="Total Learners" value={9} className="px-2" />
+                  <Input type="number" readOnly={true} placeholder="Total Learners" value={userData.data.length} className="px-2" />
                 </div>
                 <div className="flex items-center">
                   <h5 className="px-2 w-40 relative whitespace-pre">

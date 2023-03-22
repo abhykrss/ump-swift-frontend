@@ -11,11 +11,12 @@ export const LandingPage: React.FC = () => {
         <Col className="gutter-row" span={6}>
           <Link to="/register">
             <Space direction="vertical" size="middle" style={{ width: '100%' }}>
-              <Badge.Ribbon text="NEW" color="red">
+              <Badge.Ribbon text="NEW" color="green">
                 <Card
                   title="Swift Training"
                   bordered={true}
-                  hoverable={true}
+                  hoverable
+                  style={{ borderBlockColor: 'green', borderBlockWidth: 3, boxShadow: '5px 8px 24px 5px rgba(208, 216, 243, 0.6)' }}
                   bodyStyle={{ height: 100 }}
                   cover={<img alt="example" style={{ height: 250 }} src="https://hopetutors.com/wp-content/uploads/2018/02/ios-swift-training-in-chennai.png" />}
                 >
@@ -27,10 +28,11 @@ export const LandingPage: React.FC = () => {
         </Col>
         <Col className="gutter-row" span={6}>
           <Space direction="vertical" size="middle" style={{ width: '100%' }}>
-            <Badge.Ribbon text="Coming Soon" color="red">
+            <Badge.Ribbon text="Coming Soon" color="info">
               <Card
                 title="Oregen"
                 bordered={true}
+                style={{ borderBlockColor: 'red', borderBlockWidth: 3, boxShadow: '5px 8px 24px 5px rgba(208, 216, 243, 0.6)' }}
                 hoverable={true}
                 bodyStyle={{ height: 100 }}
                 cover={<img alt="example" style={{ height: 250 }} src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/41CMjKQL-HL._SX425_.jpg" />}
@@ -42,19 +44,14 @@ export const LandingPage: React.FC = () => {
         </Col>
         <Col className="gutter-row" span={6}>
           <Space direction="vertical" size="middle" style={{ width: '100%' }}>
-            <Badge.Ribbon text="Coming Soon" color="red">
+            <Badge.Ribbon text="Coming Soon" color="info">
               <Card
                 title="EMLB"
                 bordered={true}
+                style={{ borderBlockColor: 'red', borderBlockWidth: 3, boxShadow: '5px 8px 24px 5px rgba(208, 216, 243, 0.6)' }}
                 hoverable={true}
                 bodyStyle={{ height: 100 }}
-                cover={
-                  <img
-                    style={{ height: 250 }}
-                    alt="example"
-                    src="https://www.nbcsports.com/sites/rsnunited/files/archive/assets_media_gallery/philadelphia/2020/07/01/screen_shot_2020-06-03_at_2_12_0.jpg"
-                  />
-                }
+                cover={<img style={{ height: 250 }} alt="example" src="https://i.pinimg.com/originals/ef/3a/76/ef3a766176ca373cdf0f2555f0642c53.jpg" />}
               >
                 <span>EMLB User Management</span>
               </Card>
