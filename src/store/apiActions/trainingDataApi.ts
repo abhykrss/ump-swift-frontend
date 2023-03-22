@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { errorToast } from '../../common/Toast/toast';
 export const trainingDataApi = async () => {
   return await axios({
     url: '/trainingInfo',
@@ -8,5 +9,8 @@ export const trainingDataApi = async () => {
     },
   })
     .then(response => response.data) // ADD toast
-    .catch(e => console.log('error in caaling user data', e));
+    .catch(e => {
+      console.log('error in caaling user data', e);
+      errorToast(e.message);
+    });
 };

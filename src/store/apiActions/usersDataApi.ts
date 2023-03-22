@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { errorToast } from '../../common/Toast/toast';
 
 export const usersDataApi = async () => {
   return await axios({
@@ -9,5 +10,8 @@ export const usersDataApi = async () => {
     },
   })
     .then(response => response.data)
-    .catch(e => console.log('error in calling user data', e));
+    .catch(e => {
+      console.log('error in calling user data', e);
+      errorToast(e.message);
+    });
 };
