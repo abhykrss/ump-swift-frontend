@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 export const successLoginToast = () => {
   toast.success('Successfully Logged in', {
     position: 'top-right',
-    autoClose: 5000,
+    autoClose: 1000,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,
@@ -18,7 +18,7 @@ export const successLoginToast = () => {
 export const successToast = (message: string) => {
   toast.info(message, {
     position: 'top-right',
-    autoClose: 5000,
+    autoClose: 1000,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,
@@ -32,7 +32,7 @@ export const successToast = (message: string) => {
 export const errorToast = (message: string) => {
   toast.error(message, {
     position: 'top-right',
-    autoClose: 5000,
+    autoClose: 1000,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,
@@ -46,7 +46,7 @@ export const errorToast = (message: string) => {
 export const errorLoginToast = () => {
   toast.error('User Not Found', {
     position: 'top-right',
-    autoClose: 5000,
+    autoClose: 1000,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,

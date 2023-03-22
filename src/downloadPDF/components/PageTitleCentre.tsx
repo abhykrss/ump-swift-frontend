@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     marginTop: 24,
     marginBottom: 0,
     width: 'auto',
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-around',
   },
   reportTitle: {
     color: 'black',
@@ -24,16 +24,16 @@ const styles = StyleSheet.create({
   },
 });
 
-const PageTitleCentre = () => (
+const PageTitleCentre = ({ trainingData }: { trainingData: trainingType[] }) => (
   <View style={styles.titleContainer}>
     <View>
       <Text style={styles.reportTitle}>Learner Register</Text>
-      <Text style={styles.reportTitle1}>`Centre Name: Swift Training`</Text>
+      <Text style={styles.reportTitle1}>Centre Name:{trainingData[0].centre_name}</Text>
     </View>
     <View>
-      <Text style={styles.reportTitle1}>`Venue: Swift Training`</Text>
-      <Text style={styles.reportTitle1}>`Centre Number: 430921`</Text>
-      <Text style={styles.reportTitle1}>Trainer Name: Eddie`</Text>
+      <Text style={styles.reportTitle1}>Venue: {trainingData[0].venue}</Text>
+      <Text style={styles.reportTitle1}>Centre Number: {trainingData[0].centre_number}</Text>
+      <Text style={styles.reportTitle1}>Trainer Name: {trainingData[0].user_name}</Text>
     </View>
   </View>
 );
