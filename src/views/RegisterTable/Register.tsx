@@ -21,9 +21,10 @@ export const Register = () => {
   // Grabbing usersData from store
   const userData: any = useAppSelector(state => state.usersData);
   const trainingData: any = useAppSelector(state => state.trainingData);
-  const start_date = new Date(trainingData.data !== null && trainingData?.data[0]?.start_date);
-  const end_date = new Date(trainingData.data !== null && trainingData?.data[0]?.end_date);
-
+  const start_date = Date.parse(trainingData.data !== null && trainingData?.data[0]?.start_date);
+  const end_date = Date.parse(trainingData.data !== null && trainingData?.data[0]?.end_date);
+  const start_date_data = new Date(start_date);
+  const end_date_data = new Date(end_date);
   return (
     <>
       <Header />
@@ -48,14 +49,14 @@ export const Register = () => {
                       Venue
                       <span className="px-2 absolute left-[85%]">:</span>
                     </h5>
-                    <Input type="text" readOnly={true} value={trainingData.data !== null && trainingData.data[0]?.venue} className="px-2" />
+                    <Input type="text" bordered={false} readOnly={true} value={trainingData.data !== null && trainingData.data[0]?.venue} className="px-2" />
                   </div>
                   <div className="flex ml-auto w-10/12 items-center">
                     <h5 className="px-2 w-40 relative whitespace-pre">
                       Centre number
                       <span className="px-2 absolute left-[85%]">:</span>
                     </h5>
-                    <Input type="number" disabled readOnly={true} value={trainingData.data !== null && trainingData?.data[0]?.centre_number} className="px-2" />
+                    <Input type="number" bordered={false} readOnly={true} value={trainingData.data !== null && trainingData?.data[0]?.centre_number} className="px-2" />
                   </div>
                 </div>
                 <div className="grid grid-cols-2 py-2 gap-4 place-content-between">
@@ -64,14 +65,14 @@ export const Register = () => {
                       Centre Name
                       <span className="px-2 absolute left-[85%]">:</span>
                     </h5>
-                    <Input type="text" disabled readOnly={true} value={trainingData.data !== null && trainingData.data[0]?.centre_name} className="px-2" />
+                    <Input type="text" bordered={false} readOnly={true} value={trainingData.data !== null && trainingData.data[0]?.centre_name} className="px-2" />
                   </div>
                   <div className="flex ml-auto w-10/12 items-center">
                     <h5 className="px-2 w-40 relative whitespace-pre">
                       Trainer Name
                       <span className="px-2 absolute left-[85%]">:</span>
                     </h5>
-                    <Input type="text" readOnly={true} value={trainingData.data !== null && trainingData.data[0]?.user_name} className="px-2" />
+                    <Input type="text" bordered={false} readOnly={true} value={trainingData.data !== null && trainingData.data[0]?.user_name} className="px-2" />
                   </div>
                 </div>
                 <div className="grid grid-cols-2 py-2 gap-4 place-content-between">
@@ -80,14 +81,14 @@ export const Register = () => {
                       Course Start Date
                       <span className="px-2 absolute left-[85%]">:</span>
                     </h5>
-                    <Input type="text" readOnly={true} value={start_date.toLocaleDateString()} className="px-2" />
+                    <Input type="text" bordered={false} readOnly={true} value={start_date_data.toDateString().substring(4, 15)} className="px-2" />
                   </div>
                   <div className="flex  ml-auto w-10/12 items-center">
                     <h5 className="px-2 w-40 relative whitespace-pre">
                       Course Finish Date
                       <span className="px-2 absolute left-[85%]">:</span>
                     </h5>
-                    <Input type="text" readOnly={true} value={end_date.toLocaleDateString()} className="px-2" />
+                    <Input type="text" bordered={false} readOnly={true} value={end_date_data.toDateString().substring(4, 15)} className="px-2" />
                   </div>
                 </div>
                 <div className="grid grid-cols-2 py-2 gap-4 place-content-between">
@@ -96,7 +97,7 @@ export const Register = () => {
                       Course Duration
                       <span className="px-2 absolute left-[85%]">:</span>
                     </h5>
-                    <Input type="text" readOnly={true} value={`${trainingData.data !== null && trainingData?.data[0]?.duration} Hours`} className="px-2" />
+                    <Input type="text" readOnly={true} bordered={false} value={`${trainingData.data !== null && trainingData?.data[0]?.duration} Hours`} className="px-2" />
                   </div>
                   <div className="flex  ml-auto w-10/12 items-end justify-end">
                     <Link to="/exportPdf" target="_blank">
@@ -109,7 +110,7 @@ export const Register = () => {
 
             <Col span={24}>
               {/* Table JSX */}
-              <Table columns={col} dataSource={dataSource(userData)} bordered={true} rowKey={(record: any) => record.id} />
+
               <Table id="usersTable" columns={col} dataSource={dataSource(userData)} bordered={true} rowKey={(record: any) => record.id} pagination={false} />
               <div className="grid grid-cols-3 py-3 gap-3">
                 <div className="flex w-11/12 items-center">
@@ -117,21 +118,21 @@ export const Register = () => {
                     Total Learners
                     <span className="px-2 absolute left-[85%]">:</span>
                   </h5>
-                  <Input type="number" readOnly={true} placeholder="Total Learners" value={userData.data.length} className="px-2" />
+                  <Input type="number" bordered={false} readOnly={true} placeholder="Total Learners" value={userData.data.length} className="px-2" />
                 </div>
                 <div className="flex w-11/12 items-center">
                   <h5 className="px-2 w-40 relative whitespace-pre">
                     Trainer Signauture
                     <span className="px-2 absolute left-[85%]">:</span>
                   </h5>
-                  <Input type="text" readOnly={true} value={trainingData.data !== null && trainingData?.data[0]?.user_name} className="px-2" />
+                  <Input type="text" bordered={false} readOnly={true} value={trainingData.data !== null && trainingData?.data[0]?.user_name} className="px-2" />
                 </div>
                 <div className="flex ml-auto w-11/12 items-center">
                   <h5 className="px-2  w-40 relative whitespace-pre">
                     Date
                     <span className="px-2 absolute left-[85%]">:</span>
                   </h5>
-                  <Input type="text" readOnly={true} value={new Date().toLocaleDateString()} className="px-2" />
+                  <Input type="text" bordered={false} readOnly={true} value={new Date().toDateString().substring(4, 15)} className="px-2" />
                 </div>
               </div>
             </Col>

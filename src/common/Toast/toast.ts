@@ -14,6 +14,20 @@ export const successLoginToast = () => {
   });
 };
 
+// Logout Success Toast
+export const successLogoutToast = () => {
+  toast.success('Successfully Logged out', {
+    position: 'top-right',
+    autoClose: 1000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: 'light',
+  });
+};
+
 // Success Toast
 export const successToast = (message: string) => {
   toast.info(message, {

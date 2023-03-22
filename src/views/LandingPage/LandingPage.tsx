@@ -2,61 +2,58 @@ import React from 'react';
 import { Badge, Card, Col, Row, Space } from 'antd';
 import { Link } from 'react-router-dom';
 import { Header } from '../Header/Header';
+import { swiftTraining, orgon, CTM } from '../../common/assets/image';
 
 export const LandingPage: React.FC = () => {
   return (
     <>
       <Header />
-      <Row gutter={16} style={{ margin: 40 }}>
-        <Col className="gutter-row" span={6}>
+      <Row className="flex jusify-between" gutter={16} style={{ margin: 40 }}>
+        <Col className="gutter-row" xs={{ span: 10, offset: 2 }} sm={{ span: 7, offset: 1 }} lg={{ span: 5, offset: 1 }}>
           <Link to="/register">
             <Space direction="vertical" size="middle" style={{ width: '100%' }}>
               <Badge.Ribbon text="NEW" color="green">
                 <Card
                   title="Swift Training"
                   bordered={true}
-                  hoverable
-                  className="cardStyle"
-                  style={{ borderBlockColor: 'red', borderBlockWidth: 3, boxShadow: '5px 8px 24px 5px rgba(208, 216, 243, 1.5)' }}
+                  headStyle={{ backgroundColor: 'lightblue' }}
+                  hoverable={true}
                   bodyStyle={{ height: 100 }}
-                  cover={<img alt="example" style={{ height: 250 }} src="https://hopetutors.com/wp-content/uploads/2018/02/ios-swift-training-in-chennai.png" />}
+                  cover={<img alt="example" style={{ height: 140 }} src={swiftTraining} />}
                 >
-                  <span>User Management</span>
+                  <span className="card-title">Swift First Aid Training Ltd offers top notch First Aid training.</span>
                 </Card>
               </Badge.Ribbon>
             </Space>
           </Link>
         </Col>
-        <Col className="gutter-row" span={6}>
+        <Col className="gutter-row" xs={{ span: 10, offset: 2 }} sm={{ span: 7, offset: 1 }} lg={{ span: 5, offset: 1 }}>
           <Space direction="vertical" size="middle" style={{ width: '100%' }}>
-            <Badge.Ribbon text="Coming Soon" color="info">
+            <Badge.Ribbon text="Coming Soon">
               <Card
                 title="Oregen"
                 bordered={true}
-                className="cardStyle"
-                style={{ borderBlockColor: 'red', borderBlockWidth: 3, boxShadow: '5px 8px 24px 5px rgba(208, 216, 243, 1.5)' }}
+                headStyle={{ backgroundColor: 'lightblue' }}
                 hoverable={true}
                 bodyStyle={{ height: 100 }}
-                cover={<img alt="example" style={{ height: 250 }} src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/41CMjKQL-HL._SX425_.jpg" />}
+                cover={<img alt="example" style={{ height: 140 }} src={orgon} />}
               >
-                <span>Oregen User Management</span>
+                <span className="card-title">Oregen is well established company which provides a tech services since 2001.</span>
               </Card>
             </Badge.Ribbon>
           </Space>
         </Col>
-        <Col className="gutter-row" span={6}>
+        <Col className="gutter-row" xs={{ span: 10, offset: 2 }} sm={{ span: 7, offset: 1 }} lg={{ span: 5, offset: 1 }}>
           <Space direction="vertical" size="middle" style={{ width: '100%' }}>
-            <Badge.Ribbon text="Coming Soon" color="info">
+            <Badge.Ribbon text="Coming Soon">
               <Card
                 title="EMLB"
-                bordered={true}
-                className="cardStyle"
-                style={{ borderBlockColor: 'red', borderBlockWidth: 3, boxShadow: '5px 8px 24px 5px rgba(208, 216, 243, 1.5)' }}
                 hoverable={true}
+                headStyle={{ backgroundColor: 'lightblue' }}
                 bodyStyle={{ height: 100 }}
-                cover={<img style={{ height: 250 }} alt="example" src="https://i.pinimg.com/originals/ef/3a/76/ef3a766176ca373cdf0f2555f0642c53.jpg" />}
+                cover={<img style={{ height: 140 }} alt="example" src={CTM} />}
               >
-                <span>EMLB User Management</span>
+                <span className="card-title">EMLB is in cosmetic company providing customer centric products.</span>
               </Card>
             </Badge.Ribbon>
           </Space>

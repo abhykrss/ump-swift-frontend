@@ -15,9 +15,12 @@
   --primary-font-weight: 400;
 }
 
-button, [type='button'], [type='reset'], [type='submit']{
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
   background-color: #004b7c;
-  border:none !important;
+  border: none !important;
 }
 
 button.ant-btn-primary:hover {
@@ -155,6 +158,8 @@ th.ant-table-cell:hover {
 .logout-wrapper svg {
   font-size: 28px;
   margin: 0 10px;
+  display: flex;
+  align-items: center;
 }
 
 /* 
@@ -196,6 +201,31 @@ input[type='number'] {
   font-size: 40px !important;
 }
 
-.register-title{
+.register-title {
   font-family: var(--font-family);
+}
+
+span.card-title {
+  font-size: 14px;
+}
+
+.ant-card .ant-card-head {
+  border-radius: 0 !important;
+  border: none !important;
+}
+
+.ant-card .ant-card-body {
+  border-radius: 0 !important;
+}
+
+.gutter-row {
+  margin-left: 40px;
+}
+
+.ant-card-cover {
+  margin: 10px 20px !important;
+}
+
+.ant-card-bordered {
+  border: 1px solid #004b7c;
 }

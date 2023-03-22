@@ -8,14 +8,14 @@ import { SaveToPdf } from '../downloadPDF/components';
 import { useAppSelector } from '../store/constants';
 
 const AppRoutes: React.FC = () => {
-  const users = useAppSelector(state => state.usersData);
   return (
     <>
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/home" element={<LandingPage />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/exportPdf" element={<SaveToPdf />} />
+        <Route index element={<Login />} />
+        <Route path="home" element={<LandingPage />} />
+        <Route path="register" element={<Register />} />
+        <Route path="exportPdf" element={<SaveToPdf />} />
+        <Route path="*" element={<Login />} />
       </Routes>
     </>
   );

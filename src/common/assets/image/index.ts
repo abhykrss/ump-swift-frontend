@@ -8,5 +8,8 @@ const Fbicon = require('./Fblogo.png') as string;
 const bg = require('./Bg.png') as string;
 const swiftLogo = require('./swiftLogo.png');
 const softHeader = require('./swiftHeader.png');
+const swiftTraining = require('./swiftTraining.png');
+const orgon = require('./orgon.png');
+const CTM = require('./CTM.png');
 
-export { logo, refreshIcon, meetriLogo, AdminLogo, googleicon, Fbicon, bg, swiftLogo,softHeader };
+export { logo, refreshIcon, meetriLogo, AdminLogo, googleicon, Fbicon, bg, swiftLogo, softHeader, swiftTraining, orgon, CTM };
