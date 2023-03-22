@@ -19,7 +19,7 @@ export const Register = () => {
   }, []);
 
   // Grabbing usersData from store
-  const userData: any = useAppSelector(state => state.usersData);
+  const userData: userDataType = useAppSelector(state => state.usersData);
   const trainingData: any = useAppSelector(state => state.trainingData);
 
   return (

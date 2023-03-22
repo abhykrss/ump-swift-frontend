@@ -39,6 +39,8 @@ type trainingType = {
   start_date: string;
   end_date: string;
   duration: number;
+  user_name: string;
+  venue: string;
 };
 type trainingDataType = {
   loading: boolean;

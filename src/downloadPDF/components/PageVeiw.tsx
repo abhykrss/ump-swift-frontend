@@ -1,5 +1,5 @@
 import React from 'react';
-import { Page, Document, Image, StyleSheet, View } from '@react-pdf/renderer';
+import { Page, Document, Image, StyleSheet, View, Text } from '@react-pdf/renderer';
 import { swiftLogo } from '../../common/assets/image';
 import PageTitleCentre from './PageTitleCentre';
 import PageTitleEnd from './PageTitleEnd';
@@ -34,23 +34,26 @@ const styles = StyleSheet.create({
   },
 });
 
-const PageVeiw = () => (
-  <Document>
-    <Page size="A4" style={styles.page} orientation={'landscape'} wrap>
-      {/* <View fixed>
+const PageVeiw = ({ users, trainingData }: { users: userType[]; trainingData: trainingType[] }) => {
+  return (
+    <Document>
+      <Page size="A4" style={styles.page} orientation={'landscape'} wrap>
+        {/* <View fixed>
         <Image style={styles.image} src={swiftLogo} />
       </View> */}
-      <View style={styles.logo}>
-        <Image style={styles.image} src={swiftLogo} />
-        <View style={styles.pageTile}>
-          <PageTitleCentre />
-          <PageTitleEnd />
+
+        <View style={styles.logo}>
+          <Image style={styles.image} src={swiftLogo} />
+          <View style={styles.pageTile}>
+            <PageTitleCentre trainingData={trainingData} />
+            <PageTitleEnd trainingData={trainingData} />
+          </View>
         </View>
-      </View>
-      <PageTable />
-      <PageFooter />
-    </Page>
-  </Document>
-);
+        <PageTable users={users} />
+        <PageFooter trainingData={trainingData} users={users} />
+      </Page>
+    </Document>
+  );
+};
 
 export default PageVeiw;

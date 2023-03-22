@@ -22,12 +22,13 @@ const styles = StyleSheet.create({
   },
 });
 
-const PageFooter = () => {
+const PageFooter = ({ users, trainingData }: { users: userType[]; trainingData: trainingType[] }) => {
+  const now = new Date();
   return (
     <View style={styles.row} wrap={false}>
-      <Text style={styles.description}>Total Learners: 5</Text>
-      <Text style={styles.description}>Trainers Signature: xxxxx</Text>
-      <Text style={styles.description}>Date: xx/xx/xxxx</Text>
+      <Text style={styles.description}>Total Learners: {users.length}</Text>
+      <Text style={styles.description}>Trainers Signature: {trainingData[0].user_name}</Text>
+      <Text style={styles.description}>Date: {now.toLocaleDateString()}</Text>
     </View>
   );
 };
