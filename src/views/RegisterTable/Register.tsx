@@ -21,6 +21,8 @@ export const Register = () => {
   // Grabbing usersData from store
   const userData: any = useAppSelector(state => state.usersData);
   const trainingData: any = useAppSelector(state => state.trainingData);
+  const start_date = new Date(trainingData.data !== null && trainingData?.data[0]?.start_date);
+  const end_date = new Date(trainingData.data !== null && trainingData?.data[0]?.end_date);
 
   return (
     <>
@@ -67,14 +69,14 @@ export const Register = () => {
                       Course Start Date
                       <span className="px-2 absolute left-[85%]">:</span>
                     </h5>
-                    <Input type="text" readOnly={true} value={trainingData.data !== null && trainingData?.data[0]?.start_date} className="px-2" />
+                    <Input type="text" readOnly={true} value={start_date.toLocaleDateString()} className="px-2" />
                   </div>
                   <div className="flex items-center">
                     <h5 className="px-2 w-40 relative whitespace-pre">
                       Course Finish Date
                       <span className="px-2 absolute left-[85%]">:</span>
                     </h5>
-                    <Input type="text" readOnly={true} value={trainingData.data !== null && trainingData?.data[0]?.end_date} className="px-2" />
+                    <Input type="text" readOnly={true} value={end_date.toLocaleDateString()} className="px-2" />
                   </div>
                 </div>
                 <div className="grid grid-cols-3 py-2 gap-3">
@@ -83,7 +85,7 @@ export const Register = () => {
                       Course Duration
                       <span className="px-2 absolute left-[85%]">:</span>
                     </h5>
-                    <Input type="text" readOnly={true} value={trainingData.data !== null && trainingData?.data[0]?.duration} className="px-2" />
+                    <Input type="text" readOnly={true} value={`${trainingData.data !== null && trainingData?.data[0]?.duration} Hours`} className="px-2" />
                   </div>
                 </div>
                 <div className="flex items-end ">
@@ -110,14 +112,14 @@ export const Register = () => {
                     Trainer Signauture
                     <span className="px-2 absolute left-[85%]">:</span>
                   </h5>
-                  <Input type="text" readOnly={true} placeholder="Trainer Signauture" className="px-2" />
+                  <Input type="text" readOnly={true} value={trainingData.data !== null && trainingData?.data[0]?.user_name} className="px-2" />
                 </div>
                 <div className="flex items-center">
                   <h5 className="px-2 w-40 relative whitespace-pre">
                     Date
                     <span className="px-2 absolute left-[85%]">:</span>
                   </h5>
-                  <Input type="number" readOnly={true} placeholder="Date" className="px-2" />
+                  <Input type="text" readOnly={true} value={new Date().toLocaleDateString()} className="px-2" />
                 </div>
               </div>
             </Col>
