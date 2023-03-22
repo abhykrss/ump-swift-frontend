@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginTop: 24,
     width: 'auto',
-    justifyContent: 'space-around',
+    justifyContent: 'space-evenly',
     alignItems: 'center',
   },
   reportTitle: {
@@ -24,16 +24,16 @@ const styles = StyleSheet.create({
   },
 });
 
-const PageTitleEnd = ({ trainingData }: { trainingData: trainingType[] }) => (
+const PageTitleEnd = () => (
   <View style={styles.titleContainer}>
     <View style={styles.reportTitle}>
-      <Text style={styles.reportTitle1}>Course Start Date: {trainingData[0].start_date}</Text>
+      <Text style={styles.reportTitle1}>Course Start Date:xx/xx/xxxx</Text>
     </View>
     <View>
-      <Text style={styles.reportTitle1}>Course End Date: {trainingData[0].end_date}</Text>
+      <Text style={styles.reportTitle1}>Course End Date: xx/xx/xxxx</Text>
     </View>
     <View>
-      <Text style={styles.reportTitle1}>Course Duration: {trainingData[0].duration} Hrs</Text>
+      <Text style={styles.reportTitle1}>Course Duration: 60 Hrs</Text>
     </View>
   </View>
 );

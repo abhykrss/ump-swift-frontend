@@ -149,8 +149,8 @@ const items = [
 ];
 
 // console.log(userItems);
-const PageRows = ({ users }: { users: userType[] }) => {
-  const rows = users.map((item: userType, index: number) => (
+const PageRows = () => {
+  const rows = items.map((item: any, index: number) => (
     <View style={styles.row} key={index} wrap={false}>
       <Text style={styles.name}>{item.user_name}</Text>
       <Text style={styles.dob}>{item.dob}</Text>

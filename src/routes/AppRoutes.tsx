@@ -8,7 +8,6 @@ import { SaveToPdf } from '../downloadPDF/components';
 import { useAppSelector } from '../store/constants';
 
 const AppRoutes: React.FC = () => {
-  const users = useAppSelector(state => state.usersData);
   return (
     <>
       <Routes>

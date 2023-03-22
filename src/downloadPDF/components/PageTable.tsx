@@ -15,10 +15,10 @@ const styles = StyleSheet.create({
   },
 });
 
-const PageTable = ({ users }: { users: userType[] }) => (
+const PageTable = () => (
   <View style={styles.tableContainer}>
     <PageTableHeader />
-    <PageRows users={users} />
+    <PageRows />
   </View>
 );
 

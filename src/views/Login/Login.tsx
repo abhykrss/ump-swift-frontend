@@ -1,8 +1,8 @@
 // Crucial Imports
 import { Fragment, useState, useEffect, useRef } from 'react';
-import { UserOutlined, KeyOutlined } from '@ant-design/icons';
+import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { googleicon, meetriLogo, Fbicon } from '../../common/assets/image';
-
+import {Link } from 'react-router-dom';
 import './Login.css';
 import {
   addLabelFocus,
@@ -98,7 +98,7 @@ export default function Login() {
                 <div className="inner-content">
                   <h5 className="label">
                     Password
-                    <KeyOutlined className="login-icon" />
+                    <LockOutlined className="login-icon"  />
                   </h5>
                   <input type="password" className="hs-input" ref={passwordElement} onChange={e => setPassword(e.target.value)} />
                 </div>
@@ -119,6 +119,14 @@ export default function Login() {
                     <img src={Fbicon} alt="Facebook Icon" className="google-icon" />
                   </a>
                 </div>
+              </div>
+              <div className='flex justify-center items-center'>
+               <h5>Dont have an Account</h5>
+              <Link  to="/signup">
+                <span className="link px-1">
+                  Sign in
+                </span>
+              </Link>
               </div>
             </div>
           </div>
