@@ -21,10 +21,10 @@ export const Register = () => {
   // Grabbing usersData from store
   const userData: any = useAppSelector(state => state.usersData);
   const trainingData: any = useAppSelector(state => state.trainingData);
-  const start_date = Date.parse(trainingData.data !== null && trainingData?.data[0]?.start_date);
-  const end_date = Date.parse(trainingData.data !== null && trainingData?.data[0]?.end_date);
-  const start_date_data = new Date(start_date);
-  const end_date_data = new Date(end_date);
+  const start_date: Array<string> = new Date(trainingData.data !== null && trainingData?.data[0]?.start_date).toString().split(' ');
+  const end_date: Array<string> = new Date(trainingData.data !== null && trainingData?.data[0]?.end_date).toString().split(' ');
+  const todayDate: Array<string> = new Date().toString().split(' ');
+  console.log(todayDate);
   return (
     <>
       <Header />
@@ -81,14 +81,14 @@ export const Register = () => {
                       Course Start Date
                       <span className="px-2 absolute left-[85%]">:</span>
                     </h5>
-                    <Input type="text" bordered={false} readOnly={true} value={start_date_data.toDateString().substring(4, 15)} className="px-2" />
+                    <Input type="text" bordered={false} readOnly={true} value={`${start_date[2]} ${start_date[1]} ${start_date[3]}`} className="px-2" />
                   </div>
                   <div className="flex  ml-auto w-10/12 items-center">
                     <h5 className="px-2 w-40 relative whitespace-pre">
                       Course Finish Date
                       <span className="px-2 absolute left-[85%]">:</span>
                     </h5>
-                    <Input type="text" bordered={false} readOnly={true} value={end_date_data.toDateString().substring(4, 15)} className="px-2" />
+                    <Input type="text" bordered={false} readOnly={true} value={`${end_date[2]} ${end_date[1]} ${end_date[3]}`} className="px-2" />
                   </div>
                 </div>
                 <div className="grid grid-cols-2 py-2 gap-4 place-content-between">
@@ -132,7 +132,7 @@ export const Register = () => {
                     Date
                     <span className="px-2 absolute left-[85%]">:</span>
                   </h5>
-                  <Input type="text" bordered={false} readOnly={true} value={new Date().toDateString().substring(4, 15)} className="px-2" />
+                  <Input type="text" bordered={false} readOnly={true} value={`${todayDate[2]} ${todayDate[1]} ${todayDate[3]}`} className="px-2" />
                 </div>
               </div>
             </Col>

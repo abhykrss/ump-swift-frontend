@@ -23,12 +23,12 @@ const styles = StyleSheet.create({
 });
 
 const PageFooter = ({ users, trainingData }: { users: userType[]; trainingData: trainingType[] }) => {
-  const now = new Date();
+  const todayDate: Array<string> = new Date().toString().split(' ');
   return (
     <View style={styles.row} wrap={false}>
       <Text style={styles.description}>Total Learners: {users.length}</Text>
       <Text style={styles.description}>Trainers Signature: {trainingData[0].user_name}</Text>
-      <Text style={styles.description}>Date: {now.toLocaleDateString()}</Text>
+      <Text style={styles.description}>Date: {`${todayDate[2]} ${todayDate[1]} ${todayDate[3]}`}</Text>
     </View>
   );
 };

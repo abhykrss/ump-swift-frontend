@@ -19,7 +19,7 @@ export const SaveToPdf = () => {
 
   return (
     <Provider store={store}>
-      {users.data !== null && trainingData.data !== null ? (
+      {users?.data !== null && trainingData.data !== null ? (
         <div style={{ height: '100vh' }}>
           <PDFViewer width="100%" height="100%">
             <PageVeiw users={users.data} trainingData={trainingData.data} />
