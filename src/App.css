@@ -163,7 +163,6 @@ th.ant-table-cell:hover {
 }
 
 .logout-wrapper{
-  padding: 0 5px;
   display: flex;
   align-items: center;
 }
@@ -171,10 +170,9 @@ th.ant-table-cell:hover {
 span.logout-wrap {
   display: flex;
   align-items: center;
-  height: 40px;
+  height: 63.9px;
   padding: 0 10px;
   margin-left: 5px;
-  border-radius: 4px;
 }
 
 .logout-wrap:hover {
