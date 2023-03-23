@@ -2,9 +2,8 @@ import { Button, Form, Input, Switch } from 'antd';
 import axios from 'axios';
 import { errorToast, successToast } from '../../common/Toast/toast';
 import { UploadOutlined } from '@ant-design/icons';
-import { useNavigate } from 'react-router-dom';
 import { config } from '../../App';
-// const navigate = useNavigate();
+
 export const col = [
   {
     dataIndex: 'learner_completion',
@@ -44,7 +43,7 @@ export const col = [
         key: 'photoId',
       },
       {
-        title: 'Full Attendance',
+        title: 'Attendance',
         dataIndex: 'fullAttendance',
         key: 'fullAttendance',
       },
@@ -70,7 +69,6 @@ const changePhotoId = (userId: string, change: boolean) => {
     });
 };
 const updateAttendance = (userId: string, training_id: string, attendance: string) => {
-  console.log(attendance);
   const payload = { id: userId, training_id: training_id, attendance: attendance };
   axios
     .put(config.endpoint + '/updateAttendance', payload)
@@ -84,13 +82,15 @@ const updateAttendance = (userId: string, training_id: string, attendance: strin
 
 const data: any = [];
 export const dataSource = (userData: any) => {
+  if (data.length > 0) return data;
   if (userData.data === null) {
     console.log('waiting for data');
   } else {
     userData?.data?.map((user: any) => {
+      const dobFormatted: Array<string> = new Date(user.dob).toString().split(' ');
       data.push({
         name: user.user_name,
-        dOb: user.dob,
+        dOb: `${dobFormatted[2]} ${dobFormatted[1]} ${dobFormatted[3]}`,
         emailAddress: user.email,
         key: user.id,
         photoId: (

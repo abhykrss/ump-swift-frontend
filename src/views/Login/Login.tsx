@@ -111,19 +111,19 @@ export default function Login() {
               <span className="or-text">OR</span>
               <div className="flex py-3 justify-center items-center">
                 <div className="google-img mr-3">
-                  <a className="google-link" href="http://localhost:3000/auth/google-login">
+                  <a className="google-link">
                     <img src={googleicon} alt="Google Icon" className="google-icon" />
                   </a>
                 </div>
                 <div className="google-img">
-                  <a className="google-link" href="">
+                  <a className="google-link">
                     <img src={Fbicon} alt="Facebook Icon" className="google-icon" />
                   </a>
                 </div>
               </div>
               <div className="flex justify-center items-center">
                 <h5>Dont have an Account</h5>
-                <Link to="/signup">
+                <Link to="/">
                   <span className="link px-1">Sign in</span>
                 </Link>
               </div>

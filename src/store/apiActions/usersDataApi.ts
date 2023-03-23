@@ -10,6 +10,5 @@ export const usersDataApi = async () => {
     .then(response => response.data)
     .catch(e => {
       console.log('error in calling user data', e);
-      errorToast(e.message);
     });
 };

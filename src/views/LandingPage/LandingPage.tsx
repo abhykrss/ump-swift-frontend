@@ -7,7 +7,7 @@ import { swiftTraining, orgon, CTM } from '../../common/assets/image';
 export const LandingPage: React.FC = () => {
   return (
     <>
-      <Header />
+      <Header register={false} />
       <Row className="flex jusify-between" gutter={16} style={{ margin: 40 }}>
         <Col className="gutter-row" xs={{ span: 10, offset: 2 }} sm={{ span: 7, offset: 1 }} lg={{ span: 5, offset: 1 }}>
           <Link to="/register">

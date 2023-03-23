@@ -11,5 +11,6 @@ const softHeader = require('./swiftHeader.png');
 const swiftTraining = require('./swiftTraining.png');
 const orgon = require('./orgon.png');
 const CTM = require('./CTM.png');
+const SwiftFirstAid = require('./SwiftFirstAid.png');
 
-export { logo, refreshIcon, meetriLogo, AdminLogo, googleicon, Fbicon, bg, swiftLogo, softHeader, swiftTraining, orgon, CTM };
+export { logo, refreshIcon, meetriLogo, AdminLogo, googleicon, Fbicon, bg, swiftLogo, softHeader, swiftTraining, orgon, CTM, SwiftFirstAid };
