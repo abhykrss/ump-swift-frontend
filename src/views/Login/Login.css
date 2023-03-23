@@ -273,10 +273,10 @@ h4.about-us {
 }
 .input-wrapper.focus .label {
   font-size: var(--globel-font-size);
-  color: #004b7c;
+  color: #0e80f9;
 }
 .input-wrapper.focus .icon-form-icon {
-  color: #004b7c;
+  color:#0e80f9;
 }
 .hs-input {
   position: absolute;
@@ -339,10 +339,10 @@ h4.about-us {
 .input-wrapper.focus .label {
   top: -5px;
   font-size: var(--globel-font-size);
-  color: #004b7c;
+  color: #0e80f9;
 }
 .input-wrapper.focus .icon-form-icon {
-  color: #004b7c;
+  color: #0e80f9;
 }
 .hs-input {
   position: absolute;
@@ -523,12 +523,19 @@ h4.about-us {
   }
   .login-content {
     width: 100%;
+    background-color: #fff;
     justify-content: center;
     margin: 0 auto;
   }
   .login-wrapper .slider-wrapper {
-    width: fit-content;
-    height: 446px;
+    display: none;
+  }
+  .login-content .login-logo {
+    max-width: 340px;
+    width:130px;
+    margin: 0 auto;
+    display:block;
+    padding-bottom: 20px;
   }
   .login-form {
     width: 100% !important;

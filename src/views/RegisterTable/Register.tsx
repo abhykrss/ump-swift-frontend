@@ -43,7 +43,7 @@ export const Register = () => {
           <Row className="row height" align="middle" justify="center">
             <Col span={24}>
               <div className="mt-3 mb-3">
-                <div className="grid grid-cols-2 gap-4 place-content-between">
+                <div className=" gap-4 place-content-between grid grid-cols-1 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 xs:grid-cols-1">
                   <div className="flex w-10/12 items-center">
                     <h5 className="px-2 w-40 relative">
                       Venue
@@ -59,7 +59,7 @@ export const Register = () => {
                     <Input type="number" bordered={false} readOnly={true} value={trainingData.data !== null && trainingData?.data[0]?.centre_number} className="px-2" />
                   </div>
                 </div>
-                <div className="grid grid-cols-2 gap-4 place-content-between">
+                <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 xm:grid-cols-1 gap-4 place-content-between">
                   <div className="flex w-10/12  items-center">
                     <h5 className="px-2 w-40 relative whitespace-pre">
                       Centre Name
@@ -75,7 +75,7 @@ export const Register = () => {
                     <Input type="text" bordered={false} readOnly={true} value={trainingData.data !== null && trainingData.data[0]?.user_name} className="px-2" />
                   </div>
                 </div>
-                <div className="grid grid-cols-2 gap-4 place-content-between">
+                <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 xs:grid-cols-1 gap-4 place-content-between">
                   <div className="flex w-10/12 items-center">
                     <h5 className="px-2 w-40 relative whitespace-pre">
                       Course Start Date
@@ -91,7 +91,7 @@ export const Register = () => {
                     <Input type="text" bordered={false} readOnly={true} value={`${end_date[2]} ${end_date[1]} ${end_date[3]}`} className="px-2" />
                   </div>
                 </div>
-                <div className="grid grid-cols-2 gap-4 place-content-between">
+                <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 xs:grid-cols-1 gap-4 place-content-between">
                   <div className="flex w-10/12 items-center">
                     <h5 className="px-2 w-40 relative whitespace-pre">
                       Course Duration
@@ -112,27 +112,27 @@ export const Register = () => {
               {/* Table JSX */}
 
               <Table id="usersTable" columns={col}  dataSource={dataSource(userData)} bordered={true} rowKey={(record: any) => record.id} pagination={false} />
-              <div className="grid grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 xs:grid-cols-1 gap-3">
                 <div className="flex w-11/12 items-center">
-                  <h5 className="px-2  w-40 relative">
+                  <h5 className="foot-value relative">
                     Total Learners
-                    <span className="px-2 absolute left-[85%]">:</span>
+                    <span className="px-2">:</span>
                   </h5>
-                  <Input type="number" bordered={false} readOnly={true} placeholder="Total Learners" value={userData.data.length} className="px-2" />
+                  <Input type="number" bordered={false} readOnly={true} placeholder="Total Learners" value={userData.data.length} className="px-2 foot-input" />
                 </div>
-                <div className="flex w-11/12 items-center">
-                  <h5 className="px-2 w-40 relative whitespace-pre">
+                <div className="flex w-11/12 trainer-col items-center">
+                  <h5 className="foot-value relative whitespace-pre">
                     Trainer Signauture
-                    <span className="px-2 absolute left-[85%]">:</span>
+                    <span className="px-2">:</span>
                   </h5>
-                  <Input type="text" bordered={false} readOnly={true} value={trainingData.data !== null && trainingData?.data[0]?.user_name} className="px-2" />
+                  <Input  type="text" bordered={false} readOnly={true} value={trainingData.data !== null && trainingData?.data[0]?.user_name} className="px-2 foot-input" />
                 </div>
-                <div className="flex ml-auto w-11/12 items-center">
-                  <h5 className="px-2 date-input  w-40 relative whitespace-pre">
+                <div className="flex ml-auto date-value items-center">
+                  <h5 className="date-input foot-value relative whitespace-pre">
                     Date
-                    <span className="px-2 absolute left-[85%]">:</span>
+                    <span className="px-2">:</span>
                   </h5>
-                  <Input type="text" bordered={false} readOnly={true} value={`${todayDate[2]} ${todayDate[1]} ${todayDate[3]}`} className="px-2" />
+                  <Input type="text" bordered={false} readOnly={true} value={`${todayDate[2]} ${todayDate[1]} ${todayDate[3]}`} className="px-2 foot-input" />
                 </div>
               </div>
             </Col>

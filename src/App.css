@@ -244,29 +244,75 @@ span.card-title {
 .ant-card-bordered {
   border: 1px solid #004b7c;
 }
-
-.date-input {
-  text-align: right !important;
-  padding: 0 30px !important;
+.foot-input{
+  width: auto;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
-
 .ant-form-item {
   margin-bottom: 0 !important;
 }
 
-.ant-table-wrapper .ant-table.ant-table-bordered >.ant-table-container {
+.ant-table-wrapper table{
   border: 1px solid rgb(0 0 0 / 34%);
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
+
+.flex.ml-auto.date-value.items-center {
+  width: 37%;
+}
+
+.trainer-col {
+  margin-left: 20%;
+}
+
 
 
 .ant-table-wrapper .ant-table-tbody >tr.ant-table-row:hover>th, .ant-table-wrapper .ant-table-tbody >tr.ant-table-row:hover>td, .ant-table-wrapper .ant-table-tbody >tr >th.ant-table-cell-row-hover>td.ant-table-cell-row-hover{
   background: #096dd982;
   color:#fff;
 }
+.ant-table-container {
+  overflow: auto;
+}
+
+.foot-value{
+  font-family: var(--font-family);
+  font-weight:600;
+  padding-left: 0 !important;
+}
 
 @media (max-width:560px){
   .header-wrapper{
     justify-content: center;
   }
+}
+@media (max-width:990){
+  .w-40 {
+    max-width: 106%;
+    width: inherit;
+    font-family: var(--font-family);
+    font-weight: 600;
+    padding-left: 0 !important;
+}
+.w-10\/12{
+  width: 100%;
+}
+.md\:grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+}
+
+@media (max-width:1020px){
+  .ml-auto{
+    margin-left:0;
+  }
+  .justify-end{
+    justify-content: flex-start;
+  }
+
+  .date-input {
+    text-align:left !important;
+    padding: 0 !important;
+}
 }
