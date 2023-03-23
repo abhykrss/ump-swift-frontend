@@ -229,11 +229,12 @@ h4.about-us {
   max-width: 340px;
   font-family: var(--globle-font-family);
   width: 100%;
+  display: none;
   padding-bottom: 20px;
 }
 .login-content .title {
   margin: 9px 0;
-  color: #004b7c;
+  color:#0e80f9;
   font-family: var(--globle-font-family);
   font-size: var(--heading-font-size);
   font-weight: 900;
@@ -242,13 +243,13 @@ h4.about-us {
   position: relative;
   display: grid;
   margin: 25px 0;
-  border-bottom: 2px solid #f4f4f4;
+  border-bottom: 2px solid #d9d9d9;
   padding: 5px 0;
 }
 .input-wrapper .label svg {
   position: relative;
   bottom: 3px;
-  left: 5px;
+  right: 5px;
 }
 .input-wrapper:before,
 .input-wrapper:after {
@@ -257,7 +258,7 @@ h4.about-us {
   bottom: -2px;
   width: 0%;
   height: 2px;
-  background-color: #004b7c;
+  background-color:#0e80f9;
   transition: 0.4s;
 }
 .input-wrapper:before {
@@ -293,7 +294,7 @@ h4.about-us {
   font-family: 'poppins', sans-serif;
 }
 .login-content .input-wrapper:hover {
-  border-bottom: 2px solid #004b7c;
+  border-bottom: 2px solid #0e80f9;
 }
 .input-wrapper.pass {
   margin-bottom: 4px;
@@ -323,7 +324,7 @@ h4.about-us {
   top: 24%;
   font-family: var(--globle-font-family);
   transform: translateY(-50%);
-  color: #004b7c;
+  color: #0e80f9;
   font-size: var(--globel-font-size);
   transition: 0.3s;
 }
@@ -389,7 +390,7 @@ h4.about-us {
   width: 100%;
   height: 40px;
   outline: none;
-  border: 1px solid #004b7c;
+  border: 1px solid #004b7c !important;
   background-image: linear-gradient(to right, #3d3fc8, #3d3fc8, #3d3fc8);
   background-size: 200%;
   color: #fff;
@@ -405,7 +406,7 @@ h4.about-us {
 .hs-btn:hover {
   background-position: left;
   background: #fff !important;
-  border: 1px solid #004b7c;
+  border: 1px solid #004b7c !important;
   color: #004b7c;
 }
 .hs-btn:hover .google-link {
@@ -413,7 +414,7 @@ h4.about-us {
   color: #0a58ca;
 }
 .hs-input:hover {
-  border-color: #004b7c !important;
+  border-color: #0e80f9 !important;
   transition: 2ms ease !important;
 }
 .google-icon {
@@ -446,7 +447,6 @@ h4.about-us {
   font-weight: 600;
   font-family: var(--globle-font-family);
   display: flex;
-  color: #bfbfbf;
   justify-content: center;
   align-items: center;
 }
@@ -456,7 +456,7 @@ h4.about-us {
   width: 132px;
   height: 1px;
   margin-right: 4px;
-  background: #bfbfbf;
+  background: #333;
 }
 .or-text:after {
   content: '';
@@ -465,7 +465,7 @@ h4.about-us {
   margin-left: 8px;
   height: 1px;
   margin-right: 4px;
-  background: #bfbfbf;
+  background: #333;
 }
 .d-block {
   width: 100% !important;
@@ -522,8 +522,9 @@ h4.about-us {
     height: 100%;
   }
   .login-content {
-    left: 2% !important;
-    width: auto !important;
+    width: 100%;
+    justify-content: center;
+    margin: 0 auto;
   }
   .login-wrapper .slider-wrapper {
     width: fit-content;
@@ -559,10 +560,6 @@ h4.about-us {
   #root > div.login-wrapper {
     height: 100%;
   }
-  .login-content {
-    left: 2% !important;
-    width: auto !important;
-  }
   .login-wrapper .slider-wrapper {
     width: fit-content;
     height: 446px;
@@ -586,6 +583,10 @@ h4.about-us {
     background-color: #fafafa;
     background-image: none;
   }
+
+  .login-content{
+    background-color: #fff;
+  }
   #root > div.login-wrapper::before {
     display: none;
   }
@@ -596,13 +597,8 @@ h4.about-us {
   #root > div.login-wrapper {
     height: 100%;
   }
-  .login-content {
-    left: 2% !important;
-    width: auto !important;
-  }
   .login-wrapper .slider-wrapper {
-    width:fit-content !important;
-    height: 446px;
+    display: none;
   }
   .login-form {
     width: 100% !important;
@@ -610,6 +606,13 @@ h4.about-us {
   h4.about-us {
     font-size: 13px;
     bottom: 10px;
+  }
+  .login-content .login-logo {
+    max-width: 340px;
+    width:130px;
+    margin: 0 auto;
+    display:block;
+    padding-bottom: 20px;
   }
 }
 @media (max-width: 360px) {
@@ -633,13 +636,8 @@ h4.about-us {
   #root > div.login-wrapper {
     height: 100%;
   }
-  .login-content {
-    left: -6% !important;
-    width: auto !important;
-  }
   .login-wrapper .slider-wrapper {
-    width: fit-content !important;
-    height: 446px;
+    display: none;
   }
   .login-form {
     width: 100% !important;

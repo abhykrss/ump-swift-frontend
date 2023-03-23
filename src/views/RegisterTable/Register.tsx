@@ -43,7 +43,7 @@ export const Register = () => {
           <Row className="row height" align="middle" justify="center">
             <Col span={24}>
               <div className="mt-3 mb-3">
-                <div className="grid grid-cols-2 py-2 gap-4 place-content-between">
+                <div className="grid grid-cols-2 gap-4 place-content-between">
                   <div className="flex w-10/12 items-center">
                     <h5 className="px-2 w-40 relative">
                       Venue
@@ -59,7 +59,7 @@ export const Register = () => {
                     <Input type="number" bordered={false} readOnly={true} value={trainingData.data !== null && trainingData?.data[0]?.centre_number} className="px-2" />
                   </div>
                 </div>
-                <div className="grid grid-cols-2 py-2 gap-4 place-content-between">
+                <div className="grid grid-cols-2 gap-4 place-content-between">
                   <div className="flex w-10/12  items-center">
                     <h5 className="px-2 w-40 relative whitespace-pre">
                       Centre Name
@@ -75,7 +75,7 @@ export const Register = () => {
                     <Input type="text" bordered={false} readOnly={true} value={trainingData.data !== null && trainingData.data[0]?.user_name} className="px-2" />
                   </div>
                 </div>
-                <div className="grid grid-cols-2 py-2 gap-4 place-content-between">
+                <div className="grid grid-cols-2 gap-4 place-content-between">
                   <div className="flex w-10/12 items-center">
                     <h5 className="px-2 w-40 relative whitespace-pre">
                       Course Start Date
@@ -91,7 +91,7 @@ export const Register = () => {
                     <Input type="text" bordered={false} readOnly={true} value={`${end_date[2]} ${end_date[1]} ${end_date[3]}`} className="px-2" />
                   </div>
                 </div>
-                <div className="grid grid-cols-2 py-2 gap-4 place-content-between">
+                <div className="grid grid-cols-2 gap-4 place-content-between">
                   <div className="flex w-10/12 items-center">
                     <h5 className="px-2 w-40 relative whitespace-pre">
                       Course Duration
@@ -114,7 +114,7 @@ export const Register = () => {
               <Table id="usersTable" columns={col} dataSource={dataSource(userData)} bordered={true} rowKey={(record: any) => record.id} pagination={false} />
               <div className="grid grid-cols-3 py-3 gap-3">
                 <div className="flex w-11/12 items-center">
-                  <h5 className="px-2 w-40 relative">
+                  <h5 className="px-2  w-40 relative">
                     Total Learners
                     <span className="px-2 absolute left-[85%]">:</span>
                   </h5>
@@ -128,7 +128,7 @@ export const Register = () => {
                   <Input type="text" bordered={false} readOnly={true} value={trainingData.data !== null && trainingData?.data[0]?.user_name} className="px-2" />
                 </div>
                 <div className="flex ml-auto w-11/12 items-center">
-                  <h5 className="px-2  w-40 relative whitespace-pre">
+                  <h5 className="px-2 date-input  w-40 relative whitespace-pre">
                     Date
                     <span className="px-2 absolute left-[85%]">:</span>
                   </h5>
