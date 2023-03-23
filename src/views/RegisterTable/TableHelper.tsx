@@ -106,7 +106,7 @@ export const dataSource = (userData: any) => {
           <Form onFinish={values => updateAttendance(user.id, user.training_id, values.attendance)}>
             <Form.Item name="attendance">
               <Input
-                style={{ width: 70, marginTop: 20 }}
+                style={{ width: 70}}
                 onBlur={values => updateAttendance(user.id, user.training_id, values.target.value)}
                 type="number"
                 defaultValue={user.attendance}

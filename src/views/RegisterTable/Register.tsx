@@ -34,6 +34,7 @@ export const Register = () => {
   // ==============================================================================================
 
   const changePhotoId = (userId: string, change: boolean) => {
+    dispatch(updatePhotoIdStore({ userId: userId, photoId: change }));
     const payload = { id: userId, change: change };
     axios
       .put(config.endpoint + '/photoIdChange', payload)
@@ -43,9 +44,9 @@ export const Register = () => {
       .catch(err => {
         errorToast(err.data);
       });
-    dispatch(updatePhotoIdStore({ userId: userId, photoId: change }));
   };
   const updateAttendance = (userId: string, training_id: string, attendance: string) => {
+    dispatch(updateAttendanceStore({ userId: userId, attendance: Number(attendance) }));
     const payload = { id: userId, training_id: training_id, attendance: attendance };
     axios
       .put(config.endpoint + '/updateAttendance', payload)
@@ -55,7 +56,6 @@ export const Register = () => {
       .catch(err => {
         errorToast(err.data);
       });
-    dispatch(updateAttendanceStore({ userId: userId, attendance: Number(attendance) }));
   };
 
   const data: any = [];
@@ -129,7 +129,7 @@ export const Register = () => {
           <Row className="row height" align="middle" justify="center">
             <Col span={24}>
               <div className="mt-3 mb-3">
-                <div className="grid grid-cols-2 py-2 gap-4 place-content-between">
+                <div className="grid grid-cols-2 gap-4 place-content-between">
                   <div className="flex w-10/12 items-center">
                     <h5 className="px-2 w-40 relative">
                       Venue
@@ -145,7 +145,7 @@ export const Register = () => {
                     <Input type="number" bordered={false} readOnly={true} value={trainingData.data !== null && trainingData?.data[0]?.centre_number} className="px-2" />
                   </div>
                 </div>
-                <div className="grid grid-cols-2 py-2 gap-4 place-content-between">
+                <div className="grid grid-cols-2 gap-4 place-content-between">
                   <div className="flex w-10/12  items-center">
                     <h5 className="px-2 w-40 relative whitespace-pre">
                       Centre Name
@@ -161,7 +161,7 @@ export const Register = () => {
                     <Input type="text" bordered={false} readOnly={true} value={trainingData.data !== null && trainingData?.data[0]?.user_name} className="px-2" />
                   </div>
                 </div>
-                <div className="grid grid-cols-2 py-2 gap-4 place-content-between">
+                <div className="grid grid-cols-2 gap-4 place-content-between">
                   <div className="flex w-10/12 items-center">
                     <h5 className="px-2 w-40 relative whitespace-pre">
                       Course Start Date
@@ -177,7 +177,7 @@ export const Register = () => {
                     <Input type="text" bordered={false} readOnly={true} value={`${end_date[2]} ${end_date[1]} ${end_date[3]}`} className="px-2" />
                   </div>
                 </div>
-                <div className="grid grid-cols-2 py-2 gap-4 place-content-between">
+                <div className="grid grid-cols-2 gap-4 place-content-between">
                   <div className="flex w-10/12 items-center">
                     <h5 className="px-2 w-40 relative whitespace-pre">
                       Course Duration
@@ -200,9 +200,9 @@ export const Register = () => {
               {/* Table JSX */}
 
               <Table id="usersTable" columns={col} dataSource={dataSource(userData)} bordered={true} rowKey={(record: any) => record.id} pagination={false} />
-              <div className="grid grid-cols-3 py-3 gap-3">
+              <div className="grid grid-cols-3 gap-3">
                 <div className="flex w-11/12 items-center">
-                  <h5 className="px-2 w-40 relative">
+                  <h5 className="px-2  w-40 relative">
                     Total Learners
                     <span className="px-2 absolute left-[85%]">:</span>
                   </h5>
@@ -216,7 +216,7 @@ export const Register = () => {
                   <Input type="text" bordered={false} readOnly={true} value={trainingData.data !== null && trainingData?.data[0]?.user_name} className="px-2" />
                 </div>
                 <div className="flex ml-auto w-11/12 items-center">
-                  <h5 className="px-2  w-40 relative whitespace-pre">
+                  <h5 className="px-2 date-input  w-40 relative whitespace-pre">
                     Date
                     <span className="px-2 absolute left-[85%]">:</span>
                   </h5>

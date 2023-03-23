@@ -1,7 +1,7 @@
 // Crucial Imports
 import { Fragment, useState, useEffect, useRef } from 'react';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import { googleicon, meetriLogo, Fbicon } from '../../common/assets/image';
+import { googleicon, meetriLogo, Fbicon,meetriLogoMobile } from '../../common/assets/image';
 import { Link } from 'react-router-dom';
 import './Login.css';
 import {
@@ -83,13 +83,14 @@ export default function Login() {
           </div>
           <div className="login-content">
             <div className="login-form">
+            <img className="login-logo" src={meetriLogoMobile} alt="meetri logo" />
               <h2 className="title">Hello there!👋</h2>
               <div className="input-wrapper one" ref={inputWrapper}>
                 <div className="icon-form-icon"></div>
                 <div className="inner-content">
                   <h5 className="label">
+                  <UserOutlined className="login-icon" />
                     Username
-                    <UserOutlined className="login-icon" />
                   </h5>
                   <input type="text" className="hs-input" ref={labelElement} onChange={e => setUserName(e.target.value)} />
                 </div>
@@ -98,8 +99,8 @@ export default function Login() {
                 <div className="icon-form-icon"></div>
                 <div className="inner-content">
                   <h5 className="label">
+                  <LockOutlined className="login-icon" />
                     Password
-                    <LockOutlined className="login-icon" />
                   </h5>
                   <input type="password" className="hs-input" ref={passwordElement} onChange={e => setPassword(e.target.value)} />
                 </div>
@@ -111,6 +112,7 @@ export default function Login() {
               <span className="or-text">OR</span>
               <div className="flex py-3 justify-center items-center">
                 <div className="google-img mr-3">
+                  <a className="google-link">
                   <a className="google-link">
                     <img src={googleicon} alt="Google Icon" className="google-icon" />
                   </a>
