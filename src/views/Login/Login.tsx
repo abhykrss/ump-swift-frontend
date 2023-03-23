@@ -1,7 +1,7 @@
 // Crucial Imports
 import { Fragment, useState, useEffect, useRef } from 'react';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import { googleicon, meetriLogo, Fbicon,meetriLogoMobile } from '../../common/assets/image';
+import { googleicon, meetriLogo, Fbicon, meetriLogoMobile } from '../../common/assets/image';
 import { Link } from 'react-router-dom';
 import './Login.css';
 import {
@@ -83,13 +83,13 @@ export default function Login() {
           </div>
           <div className="login-content">
             <div className="login-form">
-            <img className="login-logo" src={meetriLogoMobile} alt="meetri logo" />
+              <img className="login-logo" src={meetriLogoMobile} alt="meetri logo" />
               <h2 className="title">Hello there!👋</h2>
               <div className="input-wrapper one" ref={inputWrapper}>
                 <div className="icon-form-icon"></div>
                 <div className="inner-content">
                   <h5 className="label">
-                  <UserOutlined className="login-icon" />
+                    <UserOutlined className="login-icon" />
                     Username
                   </h5>
                   <input type="text" className="hs-input" ref={labelElement} onChange={e => setUserName(e.target.value)} />
@@ -99,7 +99,7 @@ export default function Login() {
                 <div className="icon-form-icon"></div>
                 <div className="inner-content">
                   <h5 className="label">
-                  <LockOutlined className="login-icon" />
+                    <LockOutlined className="login-icon" />
                     Password
                   </h5>
                   <input type="password" className="hs-input" ref={passwordElement} onChange={e => setPassword(e.target.value)} />
@@ -117,14 +117,14 @@ export default function Login() {
                   </a>
                 </div>
                 <div className="google-img">
-                  <a className="google-link" href="">
+                  <a className="google-link">
                     <img src={Fbicon} alt="Facebook Icon" className="google-icon" />
                   </a>
                 </div>
               </div>
               <div className="flex justify-center items-center">
                 <h5>Dont have an Account</h5>
-                <Link to="/signup">
+                <Link to="/">
                   <span className="link px-1">Sign up</span>
                 </Link>
               </div>

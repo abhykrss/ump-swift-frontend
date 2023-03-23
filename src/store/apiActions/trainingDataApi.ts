@@ -10,6 +10,6 @@ export const trainingDataApi = async () => {
     .then(response => response.data) // ADD toast
     .catch(e => {
       console.log('error in caaling user data', e);
-      errorToast(e.message);
+      errorToast('Cannot Fetch Data from the Server');
     });
 };

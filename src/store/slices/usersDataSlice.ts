@@ -14,7 +14,24 @@ export const getUsersData = createAsyncThunk('slices/getUsersData', async () => 
 const usersDataSlice = createSlice({
   name: 'userData',
   initialState,
-  reducers: {},
+  reducers: {
+    updateAttendanceStore(state, action: PayloadAction<{ userId: string; attendance: number }>) {
+      // to update attendance on store
+      state.data?.map((user: userType, index) => {
+        if (action.payload.userId === user.id && state.data !== null) state.data[index].attendance = action.payload?.attendance;
+      });
+    },
+    updatePhotoIdStore(state, action: PayloadAction<{ userId: string; photoId: boolean }>) {
+      // to update photoId on store
+      state.data?.map((user: userType, index) => {
+        if (action.payload.userId === user.id && state.data !== null) state.data[index].photo_id = action.payload?.photoId;
+      });
+    },
+    clearUsers(state) {
+      // to clear user data in store
+      state.data = null;
+    },
+  },
   extraReducers: builder => {
     builder.addCase(getUsersData.pending, state => {
       state.loading = true;
@@ -32,5 +49,7 @@ const usersDataSlice = createSlice({
     });
   },
 });
+
+export const { updateAttendanceStore, updatePhotoIdStore, clearUsers } = usersDataSlice.actions;
 
 export default usersDataSlice.reducer;

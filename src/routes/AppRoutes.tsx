@@ -5,7 +5,6 @@ import { LandingPage } from '../views/LandingPage/LandingPage';
 import { Register } from '../views/RegisterTable/Register';
 import Login from '../views/Login/Login';
 import { SaveToPdf } from '../downloadPDF/components';
-import { useAppSelector } from '../store/constants';
 
 const AppRoutes: React.FC = () => {
   return (
