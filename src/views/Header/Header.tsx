@@ -25,7 +25,7 @@ export const Header = (register: { register: boolean }) => {
         </Col>
         <Col>
           <Link replace={true} to={''}>
-            <img className="admin-logo max-h-[45px]" data-testid="admin-logo" src={register.register ? SwiftFirstAid : AdminLogo} height="40" alt="meetri_admin" />
+            <img className="admin-logo max-h-[40px] ml-20" data-testid="admin-logo" src={register.register ? SwiftFirstAid : AdminLogo} height="40" alt="meetri_admin" />
           </Link>
         </Col>
         <Col className="logout-wrapper">
@@ -35,7 +35,7 @@ export const Header = (register: { register: boolean }) => {
               <span className="logout-wrap">
                 <div onClick={handleLogout}>
                   <LogoutOutlined />
-                  <span>Logout</span>
+                  <span className='logout-text'>Logout</span>
                 </div>
               </span>
             </>

@@ -280,11 +280,46 @@ span.card-title {
   padding-left: 0 !important;
 }
 
+.ant-input{
+  margin-top: 0 !important;
+}
+
 @media (max-width:560px){
   .header-wrapper{
-    justify-content: center;
+    justify-content:space-between;
+    padding-right: 0.5rem;
   }
+  img.admin-logo.max-h-\[63px\].ml-20 {
+    display: none;
 }
+}
+
+@media (max-width:770px){
+  img.max-h-\[64px\].meetri-logo {
+    height: 7vh;
+}
+
+img.admin-logo.max-h-\[63px\].ml-20 {
+    height:0;
+    display: none !important;
+    margin: 0;
+}
+span.ant-typography {
+  font-size: 12px !important;
+}
+
+span.logout-wrap {
+  font-size: 12px;
+}
+
+.header-wrapper .anticon {
+  font-size: 12px;
+}
+.logout-text{
+  display: none;
+}
+}
+
 @media (max-width:990){
   .w-40 {
     max-width: 106%;
@@ -312,5 +347,8 @@ span.card-title {
   .date-input {
     text-align:left !important;
     padding: 0 !important;
+}
+.trainer-col {
+  margin-left:0;
 }
 }
