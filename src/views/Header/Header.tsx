@@ -33,8 +33,10 @@ export const Header = (register: { register: boolean }) => {
             <>
               <Text style={{ fontSize: 14, color: 'white' }}>Welcome Eddie</Text>
               <span className="logout-wrap">
-                <LogoutOutlined onClick={handleLogout} />
-                <span>Logout</span>
+                <div onClick={handleLogout}>
+                  <LogoutOutlined />
+                  <span>Logout</span>
+                </div>
               </span>
             </>
           )}
