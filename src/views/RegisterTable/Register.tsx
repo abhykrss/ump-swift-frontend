@@ -111,8 +111,8 @@ export const Register = () => {
             <Col span={24}>
               {/* Table JSX */}
 
-              <Table id="usersTable" columns={col} dataSource={dataSource(userData)} bordered={true} rowKey={(record: any) => record.id} pagination={false} />
-              <div className="grid grid-cols-3 py-3 gap-3">
+              <Table id="usersTable" columns={col}  dataSource={dataSource(userData)} bordered={true} rowKey={(record: any) => record.id} pagination={false} />
+              <div className="grid grid-cols-3 gap-3">
                 <div className="flex w-11/12 items-center">
                   <h5 className="px-2  w-40 relative">
                     Total Learners
