@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: '40%',
-    height: '50%',
+    height: '90%',
   },
   pageTile: {
     width: '100%',
@@ -47,9 +47,9 @@ const PageVeiw = ({ users, trainingData }: { users: userType[]; trainingData: tr
           <Image style={styles.image} src={swiftLogo} />
           <View style={styles.pageTile}>
             <PageTitleCentre trainingData={trainingData} />
-            <PageTitleEnd trainingData={trainingData} />
           </View>
         </View>
+        <PageTitleEnd trainingData={trainingData} />
         <PageTable users={users} />
         <PageFooter trainingData={trainingData} users={users} />
       </Page>

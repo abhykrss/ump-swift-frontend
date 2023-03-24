@@ -32,16 +32,16 @@ export default function Login() {
   const passwordWrapper = useRef() as React.MutableRefObject<HTMLDivElement>;
 
   const addLabelFocus = () => {
-    inputWrapper.current.classList.add('focus');
+    inputWrapper?.current?.classList.add('focus');
   };
   const remveLabelFocus = () => {
-    inputWrapper.current.classList.remove('focus');
+    inputWrapper?.current?.classList.remove('focus');
   };
   const addPasswordFocus = () => {
-    passwordWrapper.current.classList.add('focus');
+    passwordWrapper?.current?.classList.add('focus');
   };
   const remvePasswordFocus = () => {
-    passwordWrapper.current.classList.remove('focus');
+    passwordWrapper?.current.classList?.remove('focus');
   };
 
   // UseEffect hook for Responsive UI.

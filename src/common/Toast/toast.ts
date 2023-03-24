@@ -10,6 +10,7 @@ export const successLoginToast = () => {
     pauseOnHover: true,
     draggable: true,
     progress: undefined,
+    closeButton: false,
     theme: 'light',
   });
 };
@@ -25,6 +26,7 @@ export const successLogoutToast = () => {
     draggable: true,
     progress: undefined,
     theme: 'light',
+    closeButton: false,
   });
 };
 
@@ -34,6 +36,7 @@ export const successToast = (message: string) => {
     position: 'top-right',
     autoClose: 1000,
     hideProgressBar: false,
+    closeButton: false,
     closeOnClick: true,
     pauseOnHover: true,
     draggable: true,
@@ -49,6 +52,7 @@ export const errorToast = (message: string) => {
     autoClose: 1000,
     hideProgressBar: false,
     closeOnClick: true,
+    closeButton: false,
     pauseOnHover: true,
     draggable: true,
     progress: undefined,
@@ -64,6 +68,7 @@ export const errorLoginToast = () => {
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,
+    closeButton: false,
     draggable: true,
     progress: undefined,
     theme: 'light',
@@ -76,6 +81,7 @@ export const warningToast = (message: string) => {
     position: 'top-right',
     autoClose: 2000,
     hideProgressBar: false,
+    closeButton: false,
     closeOnClick: true,
     pauseOnHover: true,
     draggable: true,
