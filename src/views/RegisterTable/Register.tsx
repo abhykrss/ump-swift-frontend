@@ -200,7 +200,7 @@ export const Register = () => {
               {/* Table JSX */}
 
               <Table id="usersTable" columns={col} dataSource={dataSource(userData)} bordered={true} rowKey={(record: any) => record.id} pagination={false} />
-              <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 xs:grid-cols-1 gap-3">
+              <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 xs:grid-cols-1 gap-3">
                 <div className="flex w-11/12 items-center">
                   <h5 className="foot-value relative">
                     Total Learners

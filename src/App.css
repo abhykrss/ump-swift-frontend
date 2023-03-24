@@ -334,11 +334,11 @@ span.card-title {
 
 @media (max-width:770px){
   .meetri-logo {
-    height: 10vh !important;
+    height: 15vh !important;
 }
 
 .admin-logo {
-    height:7vh !important;
+    height:10vh !important;
     margin: 0;
 }
 span.ant-typography {
@@ -370,11 +370,11 @@ span.logout-wrap {
     padding-right: 0.5rem;
   }
   .meetri-logo {
-    height: 6vh !important;
+    height: 20vh !important;
 }
 
 .admin-logo {
-    height:5vh !important;
+    height:12vh !important;
     margin: 0;
 }
 .register-title{
