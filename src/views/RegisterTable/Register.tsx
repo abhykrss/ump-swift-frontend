@@ -8,7 +8,7 @@ import { col } from './TableHelper';
 import { getTrainingData } from '../../store/slices/trainingDataSlice';
 import axios from 'axios';
 import { config } from '../../App';
-import { errorToast, successToast } from '../../common/Toast/toast';
+import { errorToast, successToast, warningToast } from '../../common/Toast/toast';
 import { UploadOutlined } from '@ant-design/icons';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import PageVeiw from '../../downloadPDF/components/PageVeiw';
@@ -33,29 +33,35 @@ export const Register = () => {
 
   // ==============================================================================================
 
-  const changePhotoId = (userId: string, change: boolean) => {
+  const changePhotoId = (userId: string, change: boolean, name: string) => {
     dispatch(updatePhotoIdStore({ userId: userId, photoId: change }));
     const payload = { id: userId, change: change };
     axios
       .put(config.endpoint + '/photoIdChange', payload)
       .then(res => {
-        successToast(res.data);
+        if (res.data === 'changed Photo ID') successToast(`Photo ID updated for ${name.split(' ')[0]}`);
+        else successToast(res.data);
       })
       .catch(err => {
         errorToast(err.data);
       });
   };
-  const updateAttendance = (userId: string, training_id: string, attendance: string) => {
-    dispatch(updateAttendanceStore({ userId: userId, attendance: Number(attendance) }));
-    const payload = { id: userId, training_id: training_id, attendance: attendance };
-    axios
-      .put(config.endpoint + '/updateAttendance', payload)
-      .then(res => {
-        successToast(res.data);
-      })
-      .catch(err => {
-        errorToast(err.data);
-      });
+  const updateAttendance = (userId: string, training_id: string, attendance: string, name: string) => {
+    if (Number(attendance) > 0 && Number(attendance) <= 100) {
+      dispatch(updateAttendanceStore({ userId: userId, attendance: Number(attendance) }));
+      const payload = { id: userId, training_id: training_id, attendance: attendance };
+      axios
+        .put(config.endpoint + '/updateAttendance', payload)
+        .then(res => {
+          if (res.data === 'changed Attendance') successToast(`Attendance updated for ${name.split(' ')[0]}`);
+          else successToast(res.data);
+        })
+        .catch(err => {
+          errorToast(err.data);
+        });
+    } else {
+      warningToast('Enter a Valid Attendance.');
+    }
   };
 
   const data: any = [];
@@ -78,16 +84,16 @@ export const Register = () => {
               unCheckedChildren="No"
               defaultChecked={user.photo_id === true ? true : false}
               onChange={e => {
-                changePhotoId(user.id, e);
+                changePhotoId(user.id, e, user.user_name);
               }}
             ></Switch>
           ),
           fullAttendance: (
-            <Form onFinish={values => updateAttendance(user.id, user.training_id, values.attendance)}>
+            <Form onFinish={values => updateAttendance(user.id, user.training_id, values.attendance, user.user_name)}>
               <Form.Item name="attendance">
                 <Input
                   style={{ width: 70, marginTop: 20 }}
-                  onBlur={values => updateAttendance(user.id, user.training_id, values.target.value)}
+                  onBlur={values => updateAttendance(user.id, user.training_id, values.target.value, user.user_name)}
                   type="number"
                   defaultValue={user.attendance}
                 />
@@ -106,6 +112,7 @@ export const Register = () => {
   };
 
   // ==============================================================================================
+
   useEffect(() => {
     dispatch(getUsersData());
     dispatch(getTrainingData());
@@ -213,7 +220,7 @@ export const Register = () => {
                     Trainer Signauture
                     <span className="px-2">:</span>
                   </h5>
-                  <Input  type="text" bordered={false} readOnly={true} value={trainingData.data !== null && trainingData?.data[0]?.user_name} className="px-2 foot-input" />
+                  <Input type="text" bordered={false} readOnly={true} value={trainingData.data !== null && trainingData?.data[0]?.user_name} className="px-2 foot-input" />
                 </div>
                 <div className="flex ml-auto date-value items-center">
                   <h5 className="date-input foot-value relative whitespace-pre">

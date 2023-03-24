@@ -18,6 +18,7 @@ import {
 } from './LoginHelpers';
 import { errorLoginToast, successLoginToast } from '../../common/Toast/toast';
 import { useNavigate } from 'react-router-dom';
+import { Form } from 'antd';
 
 export default function Login() {
   const navigate = useNavigate();
@@ -82,7 +83,7 @@ export default function Login() {
             <h4 className="about-us">Where Innovation Meets Logic</h4>
           </div>
           <div className="login-content">
-            <div className="login-form">
+            <Form className="login-form">
               <img className="login-logo" src={meetriLogoMobile} alt="meetri logo" />
               <h2 className="title">Hello there!👋</h2>
               <div className="input-wrapper one" ref={inputWrapper}>
@@ -128,7 +129,7 @@ export default function Login() {
                   <span className="link px-1">Sign up</span>
                 </Link>
               </div>
-            </div>
+            </Form>
           </div>
         </div>
       </div>

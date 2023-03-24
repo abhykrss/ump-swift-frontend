@@ -30,7 +30,7 @@ export const successLogoutToast = () => {
 
 // Success Toast
 export const successToast = (message: string) => {
-  toast.info(message, {
+  toast.success(message, {
     position: 'top-right',
     autoClose: 1000,
     hideProgressBar: false,
@@ -61,6 +61,20 @@ export const errorLoginToast = () => {
   toast.error('User Not Found', {
     position: 'top-right',
     autoClose: 1000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: 'light',
+  });
+};
+
+// Warning Toast
+export const warningToast = (message: string) => {
+  toast.warn(message, {
+    position: 'top-right',
+    autoClose: 2000,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,
