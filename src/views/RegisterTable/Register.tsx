@@ -122,8 +122,8 @@ export const Register = () => {
             </Col>
           </Row> */}
           <Row className="text-center" align="middle" justify="center">
-            <Col span={10}>
-              <h3 className="text-2xl font-semibold register-title font-mono py-2">Learner Register</h3>
+            <Col span={10} className="title-col">
+              <h3 className="font-semibold register-title font-mono py-2">Learner Register</h3>
             </Col>
           </Row>
           <Row className="row height" align="middle" justify="center">

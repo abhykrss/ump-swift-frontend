@@ -219,6 +219,7 @@ input[type='number'] {
 
 .register-title {
   font-family: var(--font-family);
+  font-size: 24px;
 }
 
 span.card-title {
@@ -272,6 +273,7 @@ span.card-title {
 }
 .ant-table-container {
   overflow: auto;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
 .foot-value{
@@ -284,39 +286,25 @@ span.card-title {
   margin-top: 0 !important;
 }
 
-@media (max-width:560px){
-  .header-wrapper{
-    justify-content:space-between;
-    padding-right: 0.5rem;
+
+@media (max-width:1020px){
+  .ml-auto{
+    margin-left:0;
   }
-  img.admin-logo.max-h-\[63px\].ml-20 {
-    display: none;
-}
-}
+  .justify-end{
+    justify-content: flex-start;
+  }
 
-@media (max-width:770px){
-  img.max-h-\[64px\].meetri-logo {
-    height: 7vh;
+  .date-input {
+    text-align:left !important;
+    padding: 0 !important;
 }
-
-img.admin-logo.max-h-\[63px\].ml-20 {
-    height:0;
-    display: none !important;
-    margin: 0;
+.trainer-col {
+  margin-left:0;
 }
-span.ant-typography {
-  font-size: 12px !important;
-}
-
-span.logout-wrap {
-  font-size: 12px;
-}
-
-.header-wrapper .anticon {
-  font-size: 12px;
-}
-.logout-text{
-  display: none;
+.ant-table-container {
+  overflow: auto;
+  box-shadow:none;
 }
 }
 
@@ -334,21 +322,77 @@ span.logout-wrap {
 .md\:grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
+.register-title{
+  font-size: 20px !important;
+}
+.ant-table-container {
+  overflow: auto;
+  box-shadow:none;
+}
 }
 
-@media (max-width:1020px){
-  .ml-auto{
-    margin-left:0;
-  }
-  .justify-end{
-    justify-content: flex-start;
-  }
 
-  .date-input {
-    text-align:left !important;
-    padding: 0 !important;
+@media (max-width:770px){
+  .meetri-logo {
+    height: 10vh !important;
 }
-.trainer-col {
-  margin-left:0;
+
+.admin-logo {
+    height:7vh !important;
+    margin: 0;
+}
+span.ant-typography {
+  font-size: 12px !important;
+}
+
+span.logout-wrap {
+  font-size: 12px;
+}
+
+.header-wrapper .anticon {
+  font-size: 12px;
+}
+.logout-text{
+  display: none;
+}
+.register-title{
+  font-size: 20px !important;
+}
+.ant-table-container {
+  overflow: auto;
+  box-shadow:none;
+}
+}
+
+@media (max-width:560px){
+  .header-wrapper{
+    justify-content:space-between;
+    padding-right: 0.5rem;
+  }
+  .meetri-logo {
+    height: 6vh !important;
+}
+
+.admin-logo {
+    height:5vh !important;
+    margin: 0;
+}
+.register-title{
+  font-size: 20px !important;
+}
+.title-col {
+  flex: none !important;
+  max-width: fit-content !important;
+}
+.logout-wrapper{
+  width: 100%;
+  justify-content: center;
+}
+.w-10\/12{
+  width: 100% !important;
+}
+.ant-table-container {
+  overflow: auto;
+  box-shadow:none;
 }
 }
