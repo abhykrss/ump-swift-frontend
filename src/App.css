@@ -162,7 +162,7 @@ th.ant-table-cell:hover {
   align-items: center;
 }
 
-.logout-wrapper{
+.logout-wrapper {
   display: flex;
   align-items: center;
 }
@@ -176,7 +176,8 @@ span.logout-wrap {
 }
 
 .logout-wrap:hover {
-  background:#add8e6;
+  background: #add8e6;
+  cursor: pointer;
 }
 /* 
 Browser Compartiblity */
@@ -196,7 +197,7 @@ input[type='number'] {
   max-width: 150px;
   width: 100%;
   font-family: var(--font-family);
-  font-weight:600;
+  font-weight: 600;
   padding-left: 0 !important;
 }
 
@@ -243,7 +244,7 @@ span.card-title {
 .ant-card-bordered {
   border: 1px solid #004b7c;
 }
-.foot-input{
+.foot-input {
   width: auto;
   padding-left: 0 !important;
   padding-right: 0 !important;
@@ -252,7 +253,7 @@ span.card-title {
   margin-bottom: 0 !important;
 }
 
-.ant-table-wrapper table{
+.ant-table-wrapper table {
   border: 1px solid rgb(0 0 0 / 34%);
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
@@ -265,134 +266,132 @@ span.card-title {
   margin-left: 20%;
 }
 
-
-
-.ant-table-wrapper .ant-table-tbody >tr.ant-table-row:hover>th, .ant-table-wrapper .ant-table-tbody >tr.ant-table-row:hover>td, .ant-table-wrapper .ant-table-tbody >tr >th.ant-table-cell-row-hover>td.ant-table-cell-row-hover{
+.ant-table-wrapper .ant-table-tbody > tr.ant-table-row:hover > th,
+.ant-table-wrapper .ant-table-tbody > tr.ant-table-row:hover > td,
+.ant-table-wrapper .ant-table-tbody > tr > th.ant-table-cell-row-hover > td.ant-table-cell-row-hover {
   background: #096dd982;
-  color:#fff;
+  color: #fff;
 }
 .ant-table-container {
   overflow: auto;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
-.foot-value{
+.foot-value {
   font-family: var(--font-family);
-  font-weight:600;
+  font-weight: 600;
   padding-left: 0 !important;
 }
 
-.ant-input{
+.ant-input {
   margin-top: 0 !important;
 }
 
-
-@media (max-width:1020px){
-  .ml-auto{
-    margin-left:0;
+@media (max-width: 1020px) {
+  .ml-auto {
+    margin-left: 0;
   }
-  .justify-end{
+  .justify-end {
     justify-content: flex-start;
   }
 
   .date-input {
-    text-align:left !important;
+    text-align: left !important;
     padding: 0 !important;
-}
-.trainer-col {
-  margin-left:0;
-}
-.ant-table-container {
-  overflow: auto;
-  box-shadow:none;
-}
+  }
+  .trainer-col {
+    margin-left: 0;
+  }
+  .ant-table-container {
+    overflow: auto;
+    box-shadow: none;
+  }
 }
 
-@media (max-width:990){
+@media (max-width: 990) {
   .w-40 {
     max-width: 106%;
     width: inherit;
     font-family: var(--font-family);
     font-weight: 600;
     padding-left: 0 !important;
-}
-.w-10\/12{
-  width: 100%;
-}
-.md\:grid-cols-1 {
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-}
-.register-title{
-  font-size: 20px !important;
-}
-.ant-table-container {
-  overflow: auto;
-  box-shadow:none;
-}
+  }
+  .w-10\/12 {
+    width: 100%;
+  }
+  .md\:grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .register-title {
+    font-size: 20px !important;
+  }
+  .ant-table-container {
+    overflow: auto;
+    box-shadow: none;
+  }
 }
 
-
-@media (max-width:770px){
+@media (max-width: 770px) {
   .meetri-logo {
     height: 15vh !important;
-}
+  }
 
-.admin-logo {
-    height:10vh !important;
+  .admin-logo {
+    height: 10vh !important;
     margin: 0;
-}
-span.ant-typography {
-  font-size: 12px !important;
+  }
+  span.ant-typography {
+    font-size: 12px !important;
+  }
+
+  span.logout-wrap {
+    font-size: 12px;
+  }
+
+  .header-wrapper .anticon {
+    font-size: 12px;
+  }
+  .logout-text {
+    display: none;
+  }
+  .register-title {
+    font-size: 20px !important;
+  }
+  .ant-table-container {
+    overflow: auto;
+    box-shadow: none;
+  }
 }
 
-span.logout-wrap {
-  font-size: 12px;
-}
-
-.header-wrapper .anticon {
-  font-size: 12px;
-}
-.logout-text{
-  display: none;
-}
-.register-title{
-  font-size: 20px !important;
-}
-.ant-table-container {
-  overflow: auto;
-  box-shadow:none;
-}
-}
-
-@media (max-width:560px){
-  .header-wrapper{
-    justify-content:space-between;
+@media (max-width: 560px) {
+  .header-wrapper {
+    justify-content: space-between;
     padding-right: 0.5rem;
   }
   .meetri-logo {
     height: 20vh !important;
-}
+  }
 
-.admin-logo {
-    height:12vh !important;
+  .admin-logo {
+    height: 12vh !important;
     margin: 0;
-}
-.register-title{
-  font-size: 20px !important;
-}
-.title-col {
-  flex: none !important;
-  max-width: fit-content !important;
-}
-.logout-wrapper{
-  width: 100%;
-  justify-content: center;
-}
-.w-10\/12{
-  width: 100% !important;
-}
-.ant-table-container {
-  overflow: auto;
-  box-shadow:none;
-}
+  }
+  .register-title {
+    font-size: 20px !important;
+  }
+  .title-col {
+    flex: none !important;
+    max-width: fit-content !important;
+  }
+  .logout-wrapper {
+    width: 100%;
+    justify-content: center;
+  }
+  .w-10\/12 {
+    width: 100% !important;
+  }
+  .ant-table-container {
+    overflow: auto;
+    box-shadow: none;
+  }
 }

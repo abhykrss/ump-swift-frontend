@@ -125,7 +125,7 @@ export default function Login() {
               </div>
               <div className="flex justify-center items-center">
                 <h5>Dont have an Account</h5>
-                <Link to="/">
+                <Link to="">
                   <span className="link px-1">Sign up</span>
                 </Link>
               </div>

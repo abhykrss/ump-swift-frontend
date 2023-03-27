@@ -35,7 +35,7 @@ export const Header = (register: { register: boolean }) => {
               <span className="logout-wrap">
                 <div onClick={handleLogout}>
                   <LogoutOutlined />
-                  <span className='logout-text'>Logout</span>
+                  <span className="logout-text">Logout</span>
                 </div>
               </span>
             </>
