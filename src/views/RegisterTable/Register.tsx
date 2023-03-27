@@ -31,7 +31,12 @@ export const Register = () => {
   // Dispatch Actionn to get Users Data
   const dispatch = useAppDispatch();
 
-  // ==============================================================================================
+  /**
+   * Updates photo_id data in database and redux-store state for respective user
+   *
+   * @param {string} userId userId of respective user
+   * @param {boolean} change photoId status of respective user according to toggle button
+   */
 
   const changePhotoId = (userId: string, change: boolean, name: string) => {
     dispatch(updatePhotoIdStore({ userId: userId, photoId: change }));
@@ -46,6 +51,15 @@ export const Register = () => {
         errorToast(err.data);
       });
   };
+
+  /**
+   * Updates attendance data in database and redux-store state for respective user
+   *
+   * @param {string} userId userId of respective user
+   * @param {string} training_id training_id status of respective user
+   * @param {string} attendance attendance status of respective user
+   * @param {string} name name of respective user
+   */
   const updateAttendance = (userId: string, training_id: string, attendance: string, name: string) => {
     if (Number(attendance) > 0 && Number(attendance) <= 100) {
       dispatch(updateAttendanceStore({ userId: userId, attendance: Number(attendance) }));
@@ -65,6 +79,12 @@ export const Register = () => {
   };
 
   const data: any = [];
+  /**
+   * Fetching data from store to make it ready to use in antd <Table>(making it in array of presentable data)
+   *
+   * @param {any} userData userData fetched from redux-store
+   */
+
   const dataSource = (userData: any) => {
     if (data.length > 0) return data;
     if (userData.data === null) {
@@ -111,7 +131,7 @@ export const Register = () => {
     return data;
   };
 
-  // ==============================================================================================
+  // It calls the values from store at inital loading of page
 
   useEffect(() => {
     dispatch(getUsersData());
@@ -192,6 +212,8 @@ export const Register = () => {
                     </h5>
                     <Input type="text" readOnly={true} bordered={false} value={`${trainingData.data !== null && trainingData?.data[0]?.duration} Hours`} className="px-2" />
                   </div>
+                  {/* {'Download PDF button'} */}
+
                   <div className="flex  ml-auto w-10/12 items-end justify-end">
                     <Button type="primary" style={{ width: 130 }}>
                       <PDFDownloadLink document={<PageVeiw users={userData.data} trainingData={trainingData.data} />} fileName="Swift Training.pdf">

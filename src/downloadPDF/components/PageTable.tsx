@@ -1,19 +1,16 @@
 import React from 'react';
-import { View, StyleSheet } from '@react-pdf/renderer';
+import { View } from '@react-pdf/renderer';
 import PageTableHeader from './PageTableHeader';
 import PageRows from './PageRows';
-
+import { styles } from './styles';
 const tableRowsCount = 11;
 
-const styles = StyleSheet.create({
-  tableContainer: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    marginTop: 24,
-    borderWidth: 1,
-    borderColor: '#bff0fd',
-  },
-});
+/**
+ * Returns JSX for table layout in pdf
+ *
+ * @param {userType[]} users
+
+ */
 
 const PageTable = ({ users }: { users: userType[] }) => (
   <View style={styles.tableContainer}>

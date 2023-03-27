@@ -1,8 +1,16 @@
 import React from 'react';
-import { Text, View, StyleSheet, Font } from '@react-pdf/renderer';
+import { Text, View } from '@react-pdf/renderer';
 import { styles } from './styles';
 
+/**
+ * Returns JSX for pdf header which at end
+ *
+ * @param {trainingType[]} trainingData training data
+
+ */
+
 const PageTitleEnd = ({ trainingData }: { trainingData: trainingType[] }) => {
+  // consverting to the format DD-MM-YYYY
   const start_date: Array<string> = new Date(trainingData[0]?.start_date).toString().split(' ');
   const end_date: Array<string> = new Date(trainingData[0]?.end_date).toString().split(' ');
 

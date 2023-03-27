@@ -1,6 +1,13 @@
 import React from 'react';
-import { Text, View, StyleSheet } from '@react-pdf/renderer';
+import { Text, View } from '@react-pdf/renderer';
 import { styles } from './styles';
+
+/**
+ * Returns JSX for pdf header which in centre
+ *
+ * @param {trainingType[]} trainingData
+
+ */
 
 const PageTitleCentre = ({ trainingData }: { trainingData: trainingType[] }) => (
   <View style={styles.titleContainer}>
