@@ -9,9 +9,9 @@ const Fbicon = require('./Fblogo.png') as string;
 const bg = require('./Bg.png') as string;
 const swiftLogo = require('./swiftLogo.png');
 const softHeader = require('./swiftHeader.png');
-const swiftTraining = require('./swiftTraining.png');
-const orgon = require('./orgon.png');
-const CTM = require('./CTM.png');
+const Traning = require('./Traning.png');
+const OregenTraining  = require('./OregenTraining.jpg');
+const EmailBusniess = require('./EmailBusniess.png');
 const SwiftFirstAid = require('./SwiftFirstAid.png');
 
-export { logo, refreshIcon, meetriLogo, AdminLogo, googleicon, Fbicon, bg, swiftLogo, softHeader, SwiftFirstAid, swiftTraining, orgon, CTM, meetriLogoMobile };
+export { logo, refreshIcon, meetriLogo, AdminLogo, googleicon, Fbicon, bg, swiftLogo, softHeader, SwiftFirstAid, EmailBusniess, OregenTraining, Traning, meetriLogoMobile };
